@@ -3,6 +3,10 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei";
 }
 
+p {
+	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei";
+}
+
 a {
 	color: #0c90dc
 }
@@ -91,9 +95,7 @@ img.avatar {
 	margin-bottom: 15px;
 	padding-right: 20px;
 	padding-top: 5px;
-	position: relative;
 	background: white;
-	
 }
 
 .post .head {
@@ -103,7 +105,7 @@ img.avatar {
 
 .post .content {
 	padding-left: 22px;
-	margin-left:0px;
+	margin-left: 2px;
 	padding-top: 10px;
 	border-left: 1px solid #ff5f3e;
 }
@@ -128,10 +130,9 @@ img.avatar {
 	padding-bottom: 6px;
 }
 
-.post .extra label em.tags a,
-.post .extra label em.page a  {
-	 color: #333333;
-} 
+.post .extra label em.tags a, .post .extra label em.cat a {
+	color: #333333;
+}
 
 .post .extra .v-line {
 	margin: 0 11px 0 8px;
@@ -141,6 +142,38 @@ img.avatar {
 	padding-right: 8px;
 }
 
+.post-subject, .post-tag-cloud {
+	padding: 10px;
+	background: white;
+}
+
+.post-subject .sj-title, .post-tag-cloud .tc-title {
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 600;
+}
+
+.post-subject .sj-content, .post-tag-cloud .tc-content {
+	padding-top: 10px;
+	line-height: 23px;
+}
+
+.post-subject .sj-content {
+	list-style: none;
+	margin-left: 5px;
+}
+
+.post-subject .sj-content .sj-item {
+	padding-bottom: 5px;
+}
+
+.post-tag-cloud .tc-content {
+	padding-left: 10px;
+}
+
+.post-tag-cloud .tc-content span.tc-item {
+	padding-right: 12px;
+}
 /***
  *
  */
