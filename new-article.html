@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>YYNOTE.COM</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- css -->
+
+		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+
+		<style type="text/css">
+			#content, #content span, #editor span, #content div, #editor, #editor div {
+				font-family: 'Open Sans', Arial, sans-serif !important;
+				font-size: 15px !important;
+				font-weight: 300 !important;
+				line-height: 1.7em !important;
+				color: black !important;
+				word-wrap: break-word;
+				-webkit-line-break: after-white-space;
+			}
+
+			#content, #yy-edit-article-title {
+				margin-left: 6px;
+			}
+
+		</style>
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+		<link rel="shortcut icon" href="favicon.ico">
+	</head>
+
+	<body>
+		<div id="navbar-example" class="navbar navbar-fixed-top">
+			<div class="navbar-inner ">
+				<div class="container" style="width: auto;">
+					<a href="index.html" class="brand"><img src="assets/img/logo.png" alt="www.yynote.com"></a>
+					<ul class="nav">
+						<li class="active">
+							<a href="index.html">博客 </a>
+						</li>
+						<li>
+							<a href="#">代码 </a>
+						</li>
+						<li>
+							<a href="#">资料 </a>
+						</li>
+						<li>
+							<a href="#">下载 </a>
+						</li>
+					</ul>
+					<ul class="nav">
+						<input type="search" class="input-xlarge navbar-search" placeholder="输入你要搜索的关键字 ...">
+					</ul>
+					<ul class="nav pull-right padding-right20 post-new-blog-navbar-btn-wrap" style="display: none">
+						<a class="btn btn-mini btn-danger" href="#"><i class="fa fa-plus"></i> 发表新文章</a>
+					</ul>
+					<ul class="nav pull-right padding-right20">
+						<li id="fat-menu" class="dropdown">
+							<div class="navbar-hello " class="dropdown-toggle" data-toggle="dropdown">
+								<img class="navbar-avatar avatar" src="assets/img/ljr.jpg" /> coopple@163.com <b class="caret"></b>
+							</div>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#"><i class="fa fa-home"></i>我的博客</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-code"></i>我的代码</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-book"></i>我的资料</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-download"></i>我的下载</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-bookmark"></i>我的收藏</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-heart"></i>我的关注</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="/yynote.com/page.html"><i class="fa fa-user"></i>我的个人主页</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#"><i class="fa fa-sign-out"></i>注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="topbar-show" >
+			<h3>Stay hungry, Stay foolish!</h3>
+			<a class="btn btn-mini btn-danger pull-right post-new-blog-btn" href="#"><i class="fa fa-plus"></i> 发表新文章</a>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+
+					<div class="yy-content-wrapper">
+						<div class="row-fluid">
+							<div class="span10" id="yy-content">
+								<div class="yy-edit-btns-group">
+									<div id="btnEdit" class="btn"
+									onclick="edit()"  >
+										<i class="fa fa-pencil"></i> Edit
+									</div>
+									<div id="btnEditNew" class="btn" style="display: none;"
+									onclick="editNew()"  >
+										<i class="fa fa-plus"></i> New note
+									</div>
+									<div id="btnSave" class="btn" style="display: none;"
+									onclick="SaveAndCloseAllEditors()"  >
+										<i class="fa fa-save"></i> Save
+									</div>
+									<div id="btnDel" class="btn btn-inverse" style="display: inline-block;"
+									onclick="delNote()" >
+										<i class="fa fa-trash-o"></i> Delete
+									</div>
+
+									<div class="alert alert-error" id="alert-msg">
+										Please input new note's title!
+									</div>
+
+								</div>
+								<div id="yy-edit-article-title">
+									<div id="title-in-view-mode">
+										<p id="title0">
+											Hello world, start first blog
+										</p>
+									</div>
+									<div id="title-in-edit-mode" >
+										<input id="yy-note-title-input" type="text" value="">
+									</div>
+								</div>
+
+								<div id="yy-wysiwyg-editor">
+									<div class="wysiwyg-editor" id="editor" contenteditable="true"></div>
+								</div>
+
+								<!-- start of content -->
+								<div id="content">
+									<ol>
+										<li>
+											<span >A Halloween apple bob may seem as homespun as a hayride, but that shiny red apple has a steamy past. It was once a powerful symbol of fertility and im &nbsp;</span>
+											<br>
+										</li>
+										<li>
+											<span>&nbsp;pple bobbing and eating candy apples are "the fossilized remnants of beliefs that ultimately go back to prehistory," British apple expert and fruit&nbsp;</span>
+											<br>
+										</li>
+										<li>
+											<span>&nbsp;storian, Joan Morgan, tells the Salt.</span>
+											<br>
+										</li>
+									</ol>
+									<div>
+										<ul>
+											<li>
+												<span>dfadsf</span>
+												<br>
+											</li>
+											<li>
+												<span>dasfadsfa</span>
+												<br>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- end of content -->
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="span2"></div>
+
+			</div>
+			<br>
+		</div>
+
+		<div class="bottom">
+			<div class="wrapper">
+				<div class="bottom-text">
+					©2012 <a href="#">YYNOTE.COM</a> All Rights Resevred.
+				</div>
+			</div>
+		</div>
+
+		<!-- javascript
+		================================================== -->
+		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
+
+		<script src="assets/js/jquery.hotkeys.min.js"></script>
+		<script src="assets/js/bootstrap-wysiwyg.min.js"></script>
+
+		<script src="assets/js/app.js"></script>
+
+		<script type="text/javascript">
+			jQuery(function($) {
+
+				function showErrorAlert(reason, detail) {
+					var msg = '';
+					if (reason === 'unsupported-file-type') {
+						msg = "Unsupported format " + detail;
+					} else {
+						console.log("error uploading file", reason, detail);
+					}
+					$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' + '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
+				}
+
+				//$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
+
+				//but we want to change a few buttons colors for the third style
+				$('#editor').ace_wysiwyg({
+					toolbar : ['font', null, 'fontSize', null, {
+						name : 'bold',
+					}, {
+						name : 'italic',
+
+					}, {
+						name : 'strikethrough',
+
+					}, {
+						name : 'underline',
+
+					}, null, {
+						name : 'insertunorderedlist',
+					}, {
+						name : 'insertorderedlist',
+					}, {
+						name : 'outdent',
+					}, {
+						name : 'indent',
+					}, null, {
+						name : 'justifyleft',
+					}, {
+						name : 'justifycenter',
+					}, {
+						name : 'justifyright',
+					}, {
+						name : 'justifyfull',
+					}, null, {
+						name : 'createLink',
+					}, {
+						name : 'unlink',
+					}, null, 'foreColor', null, {
+						name : 'undo',
+					}, {
+						name : 'redo',
+					}],
+					speech_button : false,
+				}).prev().addClass('wysiwyg-style1');
+
+				//Add Image Resize Functionality to Chrome and Safari
+				//webkit browsers don't have image resize functionality when content is editable
+				//so let's add something using jQuery UI resizable
+				//another option would be opening a dialog for user to enter dimensions.
+				if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.toLowerCase())) {
+
+					var lastResizableImg = null;
+					function destroyResizable() {
+						if (lastResizableImg == null)
+							return;
+						lastResizableImg.resizable("destroy");
+						lastResizableImg.removeData('resizable');
+						lastResizableImg = null;
+					}
+
+					var enableImageResize = function() {
+						$('.wysiwyg-editor').on('mousedown', function(e) {
+							var target = $(e.target);
+							if (e.target instanceof HTMLImageElement) {
+								if (!target.data('resizable')) {
+									target.resizable({
+										aspectRatio : e.target.width / e.target.height,
+									});
+									target.data('resizable', true);
+
+									if (lastResizableImg != null) {//disable previous resizable image
+										lastResizableImg.resizable("destroy");
+										lastResizableImg.removeData('resizable');
+									}
+									lastResizableImg = target;
+								}
+							}
+						}).on('click', function(e) {
+							if (lastResizableImg != null && !(e.target instanceof HTMLImageElement)) {
+								destroyResizable();
+							}
+						}).on('keydown', function() {
+							destroyResizable();
+						});
+					}
+					enableImageResize();
+				}
+
+			});
+		</script>
+
+	</body>
+</html>

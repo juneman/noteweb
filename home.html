@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>YYNOTE.COM</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- css -->
+
+		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<!--
+		<link href="assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<link href="assets/bootstrap/css/bootstrap_extend.css" rel="stylesheet" type="text/css">
+
+		-->
+		
+		<!--
+		<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+		-->
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+		<link rel="shortcut icon" href="favicon.ico">
+	</head>
+
+	<body>
+		<div id="navbar-example" class="navbar navbar-fixed-top">
+			<div class="navbar-inner ">
+				<div class="container" style="width: auto;">
+					<a href="index.html" class="brand"><img src="assets/img/logo.png" alt="www.yynote.com"></a>
+					<ul class="nav">
+						<li class="active">
+							<a href="index.html">博客 </a>
+						</li>
+						<li>
+							<a href="#">代码 </a>
+						</li>
+						<li>
+							<a href="#">资料 </a>
+						</li>
+						<li>
+							<a href="#">下载 </a>
+						</li>
+					</ul>
+					<ul class="nav">
+						<input type="search" class="input-xlarge navbar-search" placeholder="输入你要搜索的关键字 ...">
+					</ul>
+					<ul class="nav pull-right padding-right20 post-new-blog-navbar-btn-wrap" style="display: none">
+						<a class="btn btn-mini btn-danger" href="new-article.html"><i class="fa fa-plus"></i> 发表新文章</a>
+					</ul>
+					<ul class="nav pull-right padding-right20">
+						<li id="fat-menu" class="dropdown">
+							<div class="navbar-hello " class="dropdown-toggle" data-toggle="dropdown">
+								<img class="navbar-avatar avatar" src="assets/img/ljr.jpg" /> coopple@163.com <b class="caret"></b>
+							</div>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#"><i class="fa fa-home"></i>我的博客</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-code"></i>我的代码</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-book"></i>我的资料</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-download"></i>我的下载</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-bookmark"></i>我的收藏</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-heart"></i>我的关注</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="/yynote.com/page.html"><i class="fa fa-user"></i>我的个人主页</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#"><i class="fa fa-sign-out"></i>注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="topbar-show" >
+			<h3>Stay hungry, Stay foolish!</h3>
+			<a class="btn btn-mini btn-danger pull-right post-new-blog-btn" href="new-article.html"><i class="fa fa-plus"></i> 发表新文章</a>
+		</div>
+
+		<div class="container-fluid article-list">
+			<div class="row-fluid">
+				<div class="span9">
+
+					<div class="article-div">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="article-preview-body ">
+									<div class="title">
+										<a href="/yynote.com/article-view.html" class="Title">一种并发编程中无锁环形队列的设计</a>
+									</div>
+									<div class="summary">
+										<p>
+											Disruptor是LMAX公司开源的一个高效的内存无锁队列。这两天看了一下相关的设计文档和博客，下面尝试进行一下总结。
+										</p>
+										<p>
+											1.锁：锁是用来做并发最简单的方式，当然其代价也是最高的。内核态的锁的时候需要操作系统进行一次上下文切换，
+											等待锁的线程会被挂起直至锁释放。在上下文切换的时候，cpu之前缓存的指令和数据都将失效，对性能有很大的损失。
+											用户态的锁虽然避免了这些问题，但是其实它们只是在没有真实的竞争时才有效。
+											下面是一个计数实验中不加锁、使用锁、使用CAS及定义volatile变量之间的性能对比。
+										</p>
+										<p>
+											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
+										</p>
+										<p>
+											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
+											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
+										</p>
+										<p>
+											4. Cache Line：cache line解释起来其实很简单，就是CPU在做缓存的时候有个最小缓存单元，在同一个单元内的数据被同时被加载到缓存中，
+											充分利用 cache line可以大大降低数据读写的延迟，错误利用cache line也会导致缓存不同替换，反复失效。
+										</p>
+									</div>
+									<div class="tools">
+										<a href="post.html" class="btn btn-info ">阅读全文</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="article-div">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="article-preview-body">
+									<div class="title">
+										<a href="/yynote.com/article-view.html" class="Title">YAR 并行RPC框架研究</a>
+									</div>
+									<div class="summary">
+										<p>
+											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
+											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
+											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
+										</p>
+										<p>
+											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
+											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
+
+											对这些比较熟悉，就拿来对比一下。
+
+											好吧，步入正题：
+
+											Yar：yet another rpc，这是它的全称。
+
+											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
+
+											我也简单介绍下用法，下面的代码来自鸟哥的博客。
+										</p>
+										<p>
+											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
+										</p>
+										<p>
+											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
+											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
+										</p>
+									</div>
+									<div class="tools">
+										<a href="post.html" class="btn btn-info">阅读全文</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="article-div">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="article-preview-body">
+									<div class="title">
+										<a href="/yynote.com/article-view.html" class="Title">YAR 并行RPC框架研究</a>
+									</div>
+									<div class="summary">
+										<p>
+											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
+											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
+											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
+										</p>
+										<p>
+											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
+											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
+
+											对这些比较熟悉，就拿来对比一下。
+
+											好吧，步入正题：
+
+											Yar：yet another rpc，这是它的全称。
+
+											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
+
+											我也简单介绍下用法，下面的代码来自鸟哥的博客。
+										</p>
+										<p>
+											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
+										</p>
+										<p>
+											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
+											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
+										</p>
+									</div>
+									<div class="tools">
+										<a href="post.html" class="btn btn-info">阅读全文</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="article-div">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="article-preview-body">
+									<div class="title">
+										<a href="/yynote.com/article-view.html" class="Title">YAR 并行RPC框架研究</a>
+									</div>
+									<div class="summary">
+										<p>
+											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
+											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
+											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
+										</p>
+										<p>
+											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
+											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
+
+											对这些比较熟悉，就拿来对比一下。
+
+											好吧，步入正题：
+
+											Yar：yet another rpc，这是它的全称。
+
+											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
+
+											我也简单介绍下用法，下面的代码来自鸟哥的博客。
+										</p>
+										<p>
+											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
+										</p>
+										<p>
+											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
+											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
+										</p>
+									</div>
+									<div class="tools">
+										<a href="/yynote.com/article-view.html" class="btn btn-info ">阅读全文</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="article-div">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="article-preview-body">
+									<div class="title">
+										<a href="post.html" class="Title">php扩展中如何定义线程安全的全局对象</a>
+									</div>
+									<div class="summary">
+										<p>
+											传统的php裁剪类只能按位置裁剪。如按中间位置裁剪。这种裁剪方式可能会导致一个人被截成两段。为了解决这个问题，最近开发了一个php扩展（tclip），能自动识别人脸或者图像中其它重要区域，然后进行裁剪。裁剪效果如下：
+
+											原图：
+										</p>
+										<p>
+											<img src="assets/img/tuopu.jpg" width="600" height="572"/>
+										</p>
+									</div>
+									<div class="tools">
+										<a href="post.html" class="btn btn-info ">阅读全文</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--  pagination -->
+					<div class="pagination pagination-right">
+						<ul>
+							<li class="disabled">
+								<a href="#">上一页</a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">下一页</a>
+							</li>
+						</ul>
+					</div>
+					<!--  end of pagination -->
+				</div>
+
+				<div class="span3">
+					<div class="thumbnail">
+						<h3>我的文章分类 </h3>
+						<br />
+						<table class="table table-striped table-bordered">
+							<tbody>
+								<tr>
+									<td><a href="#">Linux应用开发</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">Linux内核开发</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">前端技术</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">web服务器</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">其他</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="view-more">
+							<a href="#">查看更多 ... </a>
+						</div>
+					</div>
+					<br />
+					<div class="thumbnail">
+						<h3>我的收藏 </h3>
+						<br />
+						<table class="table table-striped table-bordered">
+							<tbody>
+								<tr>
+									<td><a href="#">ZF2框架开发入门</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">Ruby语言入门教程</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">C语言入门教程</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">JSON格式详解</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="view-more">
+							<a href="#">查看更多 ... </a>
+						</div>
+					</div>
+					
+					<div class="wellll">
+						<div class="row-fluid DivTableDesign headerCerve">
+							<h3>我的关注</h3>
+						</div>
+						<div class="row-fluid DivTableDesign following-list">
+							<div class="clearfix">
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/ljr.jpg"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> 梁静茹</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/andy.jpg"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> 刘德华</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/avatar.png"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> Andy Du</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/ljr.jpg"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> Liangjingru</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/andy.jpg"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> Avatar</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="following-item">
+									<div class="user">
+										<a href="/yynote.com/page.html"><img class="avatar" src="assets/img/avatar.png"></a>
+									</div>
+									<div class="body">
+										<div class="name">
+											<a href="/yynote.com/page.html"> Coopple</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<!-- end of following-list -->
+						<div class="row-fluid DivTableDesign view-more">
+							<a href="#">查看更多 ... </a>
+						</div>
+					</div>
+				
+				
+				</div>
+
+			</div>
+			<br>
+		</div>
+
+		<div class="bottom">
+			<div class="wrapper">
+				<div class="bottom-text">
+					©2012 <a href="#">YYNOTE.COM</a> All Rights Resevred.
+				</div>
+			</div>
+		</div>
+
+		<!-- javascript
+		================================================== -->
+		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
+		<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
+		<script src="assets/js/app.js"></script>
+
+	</body>
+</html>
