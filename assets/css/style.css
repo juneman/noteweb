@@ -4,7 +4,7 @@ body {
 }
 
 p {
-	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei";
+	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei" !important;
 }
 
 a {
@@ -120,25 +120,26 @@ img.avatar {
 }
 
 .post .extra {
-	font-size: 15px;
-	padding-bottom: 4px;
+	padding-bottom: 3px;
 	margin: 0;
 }
 
 .post .extra label {
 	margin-bottom: 0px;
-	padding-bottom: 6px;
+	padding-bottom: 4px;
+	font-size: 13px;
 }
 
 .post .extra label em.tags a, .post .extra label em.cat a {
 	color: #333333;
+	padding-right: 3px;
 }
 
-.post .extra .v-line {
+.extra .v-line {
 	margin: 0 11px 0 8px;
 }
 
-.post .extra i {
+.extra i {
 	padding-right: 8px;
 }
 
@@ -174,6 +175,40 @@ img.avatar {
 .post-tag-cloud .tc-content span.tc-item {
 	padding-right: 12px;
 }
+
+
+/**
+ * 	
+ */
+.column-info {
+	margin-bottom: 10px;
+	padding-bottom: 2px;
+	padding-top: 15px;
+	
+	background: white;
+	
+	font-size: 23px;
+	line-height: 25px;
+	font-style: normal;
+	font-weight: 800;
+	
+	border-left: 13px solid #ff5f3e;
+}
+
+.column-info .column-extra {
+	padding-left: 15px;
+}
+
+.column-info .column-intro {
+	padding-left: 15px;
+}
+
+
+.column-info .column-extra .extra {
+	padding-top:6px;
+	padding-bottom:0px;
+}
+
 /***
  *
  */
