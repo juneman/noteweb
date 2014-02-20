@@ -7,14 +7,6 @@ p {
 	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei" !important;
 }
 
-a {
-	color: #0c90dc
-}
-
-a:hover {
-	color: #ff5f3e !important;
-}
-
 /**
  *
  */
@@ -91,7 +83,7 @@ img.avatar {
 /**
  *
  */
-.preview-wrap .post {
+.post {
 	margin-bottom: 15px;
 	padding-right: 20px;
 	padding-top: 5px;
@@ -181,18 +173,31 @@ img.avatar {
  * 	
  */
 .column-info {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	padding-bottom: 2px;
-	padding-top: 15px;
+	padding-top: 10px;
+	padding-right: 20px;
 	
 	background: white;
-	
+}
+
+.column-wrap .column-info {
+	border-left: 10px solid #ff5f3e;
+	margin-bottom: 18px;
+
 	font-size: 23px;
 	line-height: 25px;
 	font-style: normal;
 	font-weight: 800;
+}
+
+.preview-columns-wrap .column-info {
+	border-left: 6px solid #ff5f3e;
 	
-	border-left: 13px solid #ff5f3e;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 600;
+	font-style: normal;
 }
 
 .column-info .column-extra {
