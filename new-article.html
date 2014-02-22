@@ -11,6 +11,9 @@
 		<!-- css -->
 
 		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="assets/bootstrap/css/bootstrap_extend.css" rel="stylesheet" type="text/css">
+
 		<link href="assets/fontawesome/css/font-awesome.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
 
@@ -18,17 +21,12 @@
 
 		<style type="text/css">
 			#content, #content span, #editor span, #content div, #editor, #editor div {
-				font-family: 'Open Sans', Arial, sans-serif !important;
+				font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei" !important;
 				font-size: 15px !important;
-				font-weight: 300 !important;
-				line-height: 1.7em !important;
-				color: black !important;
+				line-height: 18px !important;
+				font-weight: normal;
 				word-wrap: break-word;
 				-webkit-line-break: after-white-space;
-			}
-
-			#content, #yy-edit-article-title {
-				margin-left: 6px;
 			}
 
 		</style>
@@ -55,7 +53,7 @@
 						<li>
 							<a href="#">首页 </a>
 						</li>
-						<li class="active">
+						<li>
 							<a href="#">专栏 </a>
 						</li>
 						<li>
@@ -74,7 +72,7 @@
 					<ul class="nav">
 						<input type="search" class="input-xlarge navbar-search" placeholder="输入你要搜索的关键字 ...">
 					</ul>
-					<ul class="nav pull-right padding-right20 post-new-blog-navbar-btn-wrap" style="display: none">
+					<ul class="nav pull-right padding-right20 post-new-blog-navbar-btn-wrap">
 						<a class="btn btn-mini btn-danger" href="#"><i class="icon-plus"></i> 发表新文章</a>
 					</ul>
 					<ul class="nav pull-right padding-right20">
@@ -115,101 +113,61 @@
 				</div>
 			</div>
 		</div>
+		<!--
+		<div  id="create-new-post-toolbar" >
+		<div class="yy-edit-btns-group">
+		<a id="btnEdit" class="btn"
+		onclick="edit()"  >
+		<i class="icon-pencil"></i> Edit
+		</a>
+		<a id="btnEditNew" class="btn" style="display: none;"
+		onclick="editNew()"  >
+		<i class="icon-plus"></i> New note
+		</a>
+		<a id="btnSave" class="btn"  style="display: none;"
+		onclick="SaveAndCloseAllEditors()"  >
+		<i class="icon-save"></i> Save
+		</a>
+		<a id="btnDel" class="btn btn-inverse" style="display: inline-block;"
+		onclick="delNote()" >
+		<i class="icon-trash"></i> Delete
+		</a>
 
-		<div class="topbar-show" >
-			<h3>Stay hungry, Stay foolish!</h3>
-			<a class="btn btn-mini btn-danger pull-right post-new-blog-btn" href="new-article.html"><i class="icon-plus"></i> 发表新文章</a>
+		<div class="alert alert-error" id="alert-msg">
+		Please input new note's title!
 		</div>
-
+		</div>
+		</div>
+		-->
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-
-					<div class="yy-content-wrapper">
-						<div class="row-fluid">
-							<div class="span10" id="yy-content">
-								<div class="yy-edit-btns-group">
-									<div id="btnEdit" class="btn"
-									onclick="edit()"  >
-										<i class="fa fa-pencil"></i> Edit
-									</div>
-									<div id="btnEditNew" class="btn" style="display: none;"
-									onclick="editNew()"  >
-										<i class="fa fa-plus"></i> New note
-									</div>
-									<div id="btnSave" class="btn" style="display: none;"
-									onclick="SaveAndCloseAllEditors()"  >
-										<i class="fa fa-save"></i> Save
-									</div>
-									<div id="btnDel" class="btn btn-inverse" style="display: inline-block;"
-									onclick="delNote()" >
-										<i class="fa fa-trash-o"></i> Delete
-									</div>
-
-									<div class="alert alert-error" id="alert-msg">
-										Please input new note's title!
-									</div>
-
-								</div>
-								<div id="yy-edit-article-title">
-									<div id="title-in-view-mode">
-										<p id="title0">
-											Hello world, start first blog
-										</p>
-									</div>
-									<div id="title-in-edit-mode" >
-										<input id="yy-note-title-input" type="text" value="">
-									</div>
-								</div>
-
-								<div id="yy-wysiwyg-editor">
-									<div class="wysiwyg-editor" id="editor" contenteditable="true"></div>
-								</div>
-
-								<!-- start of content -->
-								<div id="content">
-									<ol>
-										<li>
-											<span >A Halloween apple bob may seem as homespun as a hayride, but that shiny red apple has a steamy past. It was once a powerful symbol of fertility and im &nbsp;</span>
-											<br>
-										</li>
-										<li>
-											<span>&nbsp;pple bobbing and eating candy apples are "the fossilized remnants of beliefs that ultimately go back to prehistory," British apple expert and fruit&nbsp;</span>
-											<br>
-										</li>
-										<li>
-											<span>&nbsp;storian, Joan Morgan, tells the Salt.</span>
-											<br>
-										</li>
-									</ol>
-									<div>
-										<ul>
-											<li>
-												<span>dfadsf</span>
-												<br>
-											</li>
-											<li>
-												<span>dasfadsfa</span>
-												<br>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<!-- end of content -->
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-				<div class="span2"></div>
-
+				<div class="span12" id="padding-toolbar"></div>
 			</div>
-			<br>
 		</div>
 
+		<div class="yy-content-wrapper">
+			<div id="yy-content">
+				<div id="yy-edit-article-title">
+					<div id="title-in-view-mode">
+						<p id="title0"></p>
+					</div>
+					<div id="title-in-edit-mode" >
+						<input id="yy-note-title-input" type="text" value="" placeholder="输入标题 ... ">
+					</div>
+				</div>
+				<div id="yy-wysiwyg-editor">
+					<div class="wysiwyg-editor" id="editor" contenteditable="">
+					</div>
+				</div>
+
+				<!-- start of content -->
+				<div id="content"></div>
+				<!-- end of content -->
+			</div>
+		</div>
+		
+		<br />
+		
 		<div class="bottom">
 			<div class="wrapper">
 				<div class="bottom-text">
@@ -221,16 +179,17 @@
 		<!-- javascript
 		================================================== -->
 		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+
 		<script src="assets/bootstrap/js/bootstrap.js"></script>
 		<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
 		<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
 
 		<script src="assets/js/jquery.hotkeys.min.js"></script>
 		<script src="assets/js/bootstrap-wysiwyg.min.js"></script>
-		
+
 		<script src="assets/ace/js/ace-elements.min.js"></script>
 		<script src="assets/ace/js/ace.min.js"></script>
-
 
 		<script src="assets/js/app.js"></script>
 
@@ -282,7 +241,9 @@
 						name : 'createLink',
 					}, {
 						name : 'unlink',
-					}, null, 'foreColor', null, {
+					}, null, {
+						name : 'insertImage',
+					}, null, {
 						name : 'undo',
 					}, {
 						name : 'redo',

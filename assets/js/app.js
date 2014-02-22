@@ -1,6 +1,8 @@
 /**
  * @author dubin
  */
+
+/*
 $(function() {
 	var showOrHideNavbar = function() {
 		var st = $(window).scrollTop();
@@ -36,7 +38,7 @@ $(function() {
 
 	$(window).bind("scroll", showOrHidePostNewBlog);
 });
-
+*/
 
 /**
  * 
@@ -116,9 +118,6 @@ function showAlertInputTitleMsg(now) {
 }
 
 function edit(str) {
-	var actived = $("#list-detail-items .yy-list-items ul li.active");
-	if (actived.length <= 0) {editNew(); return ;}
-	
 	var contents = $('#content').html();
 	var title = trim($('#title-in-view-mode #title0').text());
 	
@@ -184,132 +183,15 @@ function SaveAndCloseAllEditors(str) {
 }
 
 
-function delNote() {
-	var actived = $("#list-detail-items .yy-list-items ul li.active");
-	if (actived.length <= 0) { return ;}
+function adjustEditorToolbar() {
+	var o = document.getElementById("editor");
+	var w = o.offsetWidth;  //宽度
 	
-	var nextObj = actived.next();
-	if (nextObj.length <= 0) {
-		/* 
-		 *  TODO: load next note from server
-		 */
-		
-		nextObj = actived.prev();
-		if (nextObj.length <= 0) {
-			actived.remove();
-			showViewer("", "");
-			$("#btnEditNew").show();
-			$("#btnEdit").hide();
-			$("#btnDel").hide();			
-			return;
-		}
-	}
-	
-	nextObj.addClass("active");
-	actived.remove();
-	
-	var titleHtml_0 = nextObj.find(".title").text();
-	var contentHtml_0 = '<div>' 
-			+ '<p> Date:' + nextObj.find(".description .date").text()
-			+ '</p>'
-			+ 'summary:' + nextObj.find(".description .summary").text()
-			+ '<ul>' 
-			+ '<li>'
-			+ '<span> First Test</span>'
-			+ '<br>'
-			+ '</li>'
-			+ '<li>'
-			+ '<span>dasfadsfa</span>'
-			+ '<br>'
-			+ '</li>'
-			+ '</ul>'
-			+ '</div>';
-	
-	showViewer(titleHtml_0, contentHtml_0);
-	
-	var summary = trim($("#yy-wysiwyg-editor #editor").text()).substr(0, 45) + " ...";
-	nextObj.find("div.title").text(title);
-	nextObj.find("div.description span.summary").html(summary);
+	$('#yy-note-title-input').css('width', w + 'px');
+	$('#wysiwyg-toolbar').css('width', w + 'px');
 }
 
 $(function() {
-/** 
- * not support -- 2013-11-03
- * 
- * 
-	$("div.yy-side-nav-menu-item").click(function() {
-		var parent = $(this).parent();
-		var pparent = parent.parent();
-		var sub_menu = parent.find("ul.yy-side-nav-sub-menus");
-
-		var kz = parent.attr("class");
-		var expand = sub_menu.attr("expand");
-
-		if (kz == "active") {
-
-			if (sub_menu.length > 0) {
-
-				if (expand == "true") {
-					sub_menu.slideUp("noraml", function() {});
-					sub_menu.attr("expand", "false");
-					$(this).find("span i:last").removeClass("icon-caret-down");
-					$(this).find("span i:last").addClass("icon-caret-right");
-				} else if (expand == "false") {
-					sub_menu.slideDown("noraml", function() {});
-					sub_menu.attr("expand", "true");
-					$(this).find("span i:last").removeClass("icon-caret-right");
-					$(this).find("span i:last").addClass("icon-caret-down");
-				}
-			} else {
-			}
-		} else {
-			var actived = pparent.find("li.active");
-			var icon_dom = actived.find(".yy-side-nav-menu-item span i:last");
-			var actived_submenu = actived.find(".yy-side-nav-sub-menus");
-
-			if (actived_submenu.length > 0) {
-				actived_submenu.slideUp("noraml", function() {
-					actived.removeClass("active");
-				});
-				actived_submenu.attr("expand", "false");
-				icon_dom.removeClass("icon-caret-down");
-				icon_dom.addClass("icon-caret-right");
-			} else {
-				actived.removeClass("active");
-			}
-
-			if (sub_menu.length > 0) {
-				sub_menu.slideDown("noraml", function() {
-					parent.toggleClass("active");
-				});
-				sub_menu.attr("expand", "true");
-				$(this).find("span i:last").removeClass("icon-caret-right");
-				$(this).find("span i:last").addClass("icon-caret-down");
-			} else {
-				parent.toggleClass("active");
-			}
-		}
-
-	});
-	
- 	* 
- 	* end of -- not support
-	*/ 
-	
-	$(".yy-side-nav-sub-menus li").click(function() {
-		var kz = $(this).attr("class");
-		if (kz == "sub-active") {
-			return;
-		}
-		
-		var actived = $(this).parent().find("li.sub-active");
-		if (actived.length > 0) 
-		{
-			actived.removeClass("sub-active");
-		}
-		
-		$(this).addClass("sub-active");
-	});
 	
 	$('#title-in-edit-mode input').click(function() {
 		hideAlertInputTitleMsg();
@@ -319,125 +201,5 @@ $(function() {
 		hideAlertInputTitleMsg();
 	});
 	
+	
 });
-
-$(function() {
-	$('#list-detail-items .yy-list-items ul#yy-list-items-wrap').delegate('li' ,"click", function() {
-		var kz = $(this).attr("class");
-		if (kz == "active") {
-			return;
-		}
-		
-		if (g_editor_mode == 1) {
-			var ret = SaveAndCloseAllEditors("");
-			if (ret == 1) {
-				return;
-			}
-		}
-		
-		hideAlertInputTitleMsg();
-		
-		var actived = $(this).parent().find("li.active");
-		if (actived.length > 0) 
-		{
-			actived.removeClass("active");
-		}
-		
-		$(this).addClass("active");
-		var data_section = $(this).attr("data-section");
-
-		var headerHtml_0 = trim($(this).find(".title").text());
-		var contentHtml_0 = '<div>' 
-			+ 'data-section:' + data_section
-			+ '<ul>' 
-			+ '<li>'
-			+ '<span> First Test</span>'
-			+ '<br>'
-			+ '</li>'
-			+ '<li>'
-			+ '<span>dasfadsfa</span>'
-			+ '<br>'
-			+ '</li>'
-			+ '</ul>'
-			+ '</div>';
-		
-			$("#yy-edit-article-title #title-in-view-mode p#title0").text(headerHtml_0);
-			$("#content").html(contentHtml_0);
-	});
-});
-
-
-$(function() {
-	$('#list-detail-items #yy-new-note-btns-group #btnNew').click(editNew);
-});
-
-
-$(function() {
-	$("ul.navigation-bar-top li").hover(function() {
-		//$(this).find("a span").css("border-bottom"," 1px solid #0088cc");
-		//$(this).find("a span.nav-text").css("color","#0088cc");
-	}, function() {
-		var kz = $(this).attr("class");
-		if (kz == "currently") {
-			return;
-		}
-		//$(this).find("a span").css("border-bottom","0px");
-		//$(this).find("a span.nav-text").css("color","#777777");
-	});
-
-});
-
-$(function() {
-	$("div.content-area span").hover(function() {
-		$(this).css("background-color", "#f2f2f2");
-		$(this).css("border-radius", "4px");
-
-	}, function() {
-		$(this).css("background-color", "#ffffff");
-	});
-
-	$("div.content-area p span").click(function() {
-		var word = $(this).text();
-		word = word.toLowerCase();
-
-		$("div#rd-tool-side-dics").css("display", "block");
-		$("div#rd-tool-side-dics #rd-tool-side-dics-wd").html(word);
-
-	});
-
-	$("#rd-tool-side-close").click(function() {
-		var obj = $("div#rd-tool-side-dics");
-		obj.fadeOut("500", function() {
-			obj.css("display", "none");
-		});
-	});
-});
-
-$(function() {
-	$("#add-dict").click(function() {
-		var data = {
-			"word" : "two",
-			"b_pr" : "[kad]",
-			"a_pr" : "[ked]",
-			"sm" : "n,一个\nv,大个",
-			"synonym" : "word-s",
-			"antonym" : "word-a",
-			"usage" : "a word\n big word\nwords like",
-			"tense_1" : "worded",
-			"tense_2" : "",
-			"tense_3" : "wording",
-			"tense_4" : "",
-			"tense_5" : "",
-			"plural" : "word-p",
-		}
-
-		// Post
-		$.post('http://192.168.56.101/dict/add/one', data, function(data, status) {
-			alert("OK");
-			alert(respons.code.code);
-			alert(respons.code);
-		});
-
-	});
-});
-
