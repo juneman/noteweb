@@ -51,7 +51,7 @@
 					<a href="index.html" class="brand"><img src="assets/img/logo.png" alt="www.yynote.com"></a>
 					<ul class="nav">
 						<li>
-							<a href="#">首页 </a>
+							<a href="index.html">首页 </a>
 						</li>
 						<li>
 							<a href="#">专栏 </a>
@@ -71,9 +71,6 @@
 					</ul>
 					<ul class="nav">
 						<input type="search" class="input-xlarge navbar-search" placeholder="输入你要搜索的关键字 ...">
-					</ul>
-					<ul class="nav pull-right padding-right20 post-new-blog-navbar-btn-wrap">
-						<a class="btn btn-mini btn-danger" href="#"><i class="icon-plus"></i> 发表新文章</a>
 					</ul>
 					<ul class="nav pull-right padding-right20">
 						<li id="fat-menu" class="dropdown">
@@ -113,32 +110,7 @@
 				</div>
 			</div>
 		</div>
-		<!--
-		<div  id="create-new-post-toolbar" >
-		<div class="yy-edit-btns-group">
-		<a id="btnEdit" class="btn"
-		onclick="edit()"  >
-		<i class="icon-pencil"></i> Edit
-		</a>
-		<a id="btnEditNew" class="btn" style="display: none;"
-		onclick="editNew()"  >
-		<i class="icon-plus"></i> New note
-		</a>
-		<a id="btnSave" class="btn"  style="display: none;"
-		onclick="SaveAndCloseAllEditors()"  >
-		<i class="icon-save"></i> Save
-		</a>
-		<a id="btnDel" class="btn btn-inverse" style="display: inline-block;"
-		onclick="delNote()" >
-		<i class="icon-trash"></i> Delete
-		</a>
-
-		<div class="alert alert-error" id="alert-msg">
-		Please input new note's title!
-		</div>
-		</div>
-		</div>
-		-->
+	 
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12" id="padding-toolbar"></div>
@@ -148,11 +120,10 @@
 		<div class="yy-content-wrapper">
 			<div id="yy-content">
 				<div id="yy-edit-article-title">
-					<div id="title-in-view-mode">
-						<p id="title0"></p>
-					</div>
 					<div id="title-in-edit-mode" >
-						<input id="yy-note-title-input" type="text" value="" placeholder="输入标题 ... ">
+						<input id="yy-note-title-input" type="text" value="" placeholder="please input new title ... ">
+						<a href="#" class="btn btn-medium btn-danger" id="btnSave" onclick="saveAndCloseAllEditor()" >Save</a>
+						<a href="#" class="btn btn-mini btn-link" id="btnClearAll" onclick="clearAllEditor()">Clear all</a>
 					</div>
 				</div>
 				<div id="yy-wysiwyg-editor">

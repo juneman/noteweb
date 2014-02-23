@@ -347,16 +347,6 @@ img.avatar {
 	position: fixed;
 }
 
-#yy-new-note-btns-group #btnNew {
-	background-color: rgb(210, 71, 38);
-	color: white;
-}
-
-#btnEditNew {
-	background-color: rgb(210, 71, 38);
-	color: white;
-}
-
 .yy-content-wrapper {
 	width: 900px;
 	margin: 0 auto;
@@ -365,8 +355,6 @@ img.avatar {
 	position: relative;
 	transform: translate3d(0px, 0px, 0px);
 	transition: transform 500ms ease 0s;
-	
-	
 }
 
 .yy-edit-btns-group {
@@ -382,13 +370,6 @@ img.avatar {
 	background-color: white;
 }
 
-#yy-edit-article-title #title-in-view-mode {
-	display: none;
-	border-bottom: 1px solid #D5D5D5;
-	margin-bottom: 5px;
-	width: 100%;
-}
-
 #yy-edit-article-title #title-in-edit-mode {
 	display: inline-block;
 	top: 80px;
@@ -396,14 +377,13 @@ img.avatar {
 	z-index: 1000;
 	width: 50%;
 }
+ 
 
-#title-in-view-mode #title0 {
-	word-break: break-all;
-	word-wrap: break-word;
-	width: 100%;
-}
-
-#yy-edit-article-title #title-in-edit-mode input, input#yy-note-title-input, input#yy-note-title-input:active, input#yy-note-title-input:after, input#yy-note-title-input:before {
+#yy-edit-article-title #title-in-edit-mode input, 
+input#yy-note-title-input, 
+input#yy-note-title-input:active, 
+input#yy-note-title-input:after, 
+input#yy-note-title-input:before {
 	background-color: transparent;
 	font-size: 22px;
 	border-left-style: none;
@@ -425,7 +405,7 @@ img.avatar {
 	border-bottom-color: #bbc0ca;
 	padding-left: 0px;
 	margin-left: 0px;
-	width: 895px;
+	width: 500px;
 	display: inline-block;
 	height: 24px !important;
 }
@@ -440,17 +420,13 @@ img.avatar {
 }
 
 #content {
-	width: 100%;
-	padding-top: 5px;
-}
-
-.alert {
-	padding: 3px 50px 5px 6px;
-	margin-left: 20px;
-}
-
-#alert-msg {
+	width: 900px;
+	padding: 15px;
 	display: none;
+	background-color: #f7f8fa;
+	border-left: 1px solid #bbc0ca;
+	border-right: 1px solid #bbc0ca;
+	border-bottom: 1px solid #bbc0ca;
 }
 
 .wysiwyg-toolbar {
@@ -492,6 +468,7 @@ img.avatar {
 	margin-top: 26px;
 	padding-left: 10px;
 	padding-top: 15px;
+	padding-bottom: 15px;
 }
 .wysiwyg-editor li {
 	line-height: 26px;
