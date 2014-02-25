@@ -100,6 +100,7 @@ img.avatar {
 	margin-left: 2px;
 	padding-top: 10px;
 	border-left: 1px solid #ff5f3e;
+	padding-bottom: 20px;
 }
 
 .post .title {
@@ -166,6 +167,18 @@ img.avatar {
 
 .post-tag-cloud .tc-content span.tc-item {
 	padding-right: 12px;
+}
+
+.yy-pagenation p a {
+	padding-left: 10px;
+}
+
+.yy-pagenation p:last-child a {
+	padding-left: 0px;
+}
+
+.yy-pagenation p {
+	margin-bottom:2px;
 }
 
 /**
