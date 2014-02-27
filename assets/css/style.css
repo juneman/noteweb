@@ -1,7 +1,9 @@
+@import url('template.css');
+
 body {
-/*
-	background-color: #f8f8f8;
-*/
+	/*
+	 background-color: #f8f8f8;
+	 */
 	background: #e9e7e0;
 	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei";
 }
@@ -11,7 +13,7 @@ p {
 }
 
 .row-fluid [class*="span"] {
-	margin-left: 1.5%;	
+	margin-left: 1.5%;
 }
 
 /**
@@ -28,25 +30,26 @@ p {
 /**
  *
  */
-.topbar-show {
-	height: 50px;
-	padding-top: 20px;
+.topbar-padding {
+	height: 0px;
+	padding-top: 0px;
 	padding-left: 120px;
 	margin-bottom: 30px;
-/*	
-	background-color: #f0f0f0;
-	background: #f16e50;
-*/
-	background: #ff5f3e;
-	color: #f4f4f4;
+	/*
+	 background-color: #f0f0f0;
+	 background: #f16e50;background: #ff5f3e;
+	 color: #f4f4f4;
+	 */
+
+}
+ 
+#navbar-example.transparent75 {
+	filter: alpha(opacity=75); /*IE滤镜 */
+	-moz-opacity: 0.75; /*Firefox私有  */
+	opacity: 0.75; /*其他*/
 }
 
-.topbar-show .post-new-blog-btn {
-	font-size: 18px;
-	padding: 6px 8px 8px 8px;
-	margin-right: 50px;
-	margin-top: -30px;
-	font-weight: 800;
+#navbar-example.transparent0 {
 }
 
 ul.post-new-blog-navbar-btn-wrap {
@@ -101,12 +104,17 @@ img.avatar {
 	background: #fff;
 }
 
-.post .head {
-	padding-left: 15px;
-	padding-top:6px;
+.full-view {
+	margin: 0 auto;
+	width: 60%;
 }
 
-.preview-wrap .post .head {
+.post .head {
+	padding-left: 15px;
+	padding-top: 6px;
+}
+
+.post .head:first-child {
 	border-left: 6px solid #ff5f3e;
 }
 
@@ -117,12 +125,13 @@ img.avatar {
 	padding-bottom: 20px;
 }
 
+.column-wrap  .post .content,
 .preview-wrap .post .content {
-	
+	border-left: 1px solid #ff5f3e;
 }
 
 .post .content p {
-	line-height: 22px;
+	line-height: 23px;
 }
 
 .post .title {
@@ -145,15 +154,43 @@ img.avatar {
 	font-size: 13px;
 }
 
+.extra.extra-bottom, .extra.extra-bottom label {
+	padding-top: 5px;
+}
+.extra.extra-bottom label.user-action {
+	padding-top: 20px;
+}
+.extra.extra-bottom label.user-action i.icon-thumbs-up,
+.extra.extra-bottom label.user-action em.thumbs-up {
+	cursor: pointer;
+	color: #ff5f3e!important;
+}
+.extra.extra-bottom label.user-action i.icon-thumbs-up:hover {
+	color: #FF0F00!important;
+	font-size: 45px; 
+}
+.extra.extra-bottom label.user-action em.thumbs-up:hover {
+	color: #FF0F00!important;
+}
+
+.extra.extra-bottom label.user-action em.thumbs-up {
+	font-size: 16px;
+}
+.extra.extra-bottom label.user-action i.icon-thumbs-up {
+	font-size: 42px;
+}
+
 .post .extra label em.tags a, .post .extra label em.cat a {
 	color: #333333;
 	padding-right: 3px;
 }
 
+.post-tags-bottom .v-line,
 .extra .v-line {
 	margin: 0 11px 0 8px;
 }
 
+.post-tags-bottom i,
 .extra i {
 	padding-right: 8px;
 }
@@ -189,6 +226,26 @@ img.avatar {
 
 .post-tag-cloud .tc-content span.tc-item {
 	padding-right: 12px;
+	white-space:nowrap;
+}
+
+.post-tags-bottom label em a{
+	font-size: 12px;
+	color: #0088CC;
+	padding-right: 3px;
+}
+.post-tags-bottom label em a:hover {
+	color: #005580;
+}
+
+.post-tags-bottom,
+.yy-pagenation {
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	background: #fff;
+	margin-bottom:15px;
 }
 
 .yy-pagenation p a {
@@ -200,7 +257,7 @@ img.avatar {
 }
 
 .yy-pagenation p {
-	margin-bottom:2px;
+	margin-bottom: 4px;
 }
 
 /**
@@ -385,7 +442,6 @@ img.avatar {
 .yy-content-wrapper {
 	width: 900px;
 	margin: 0 auto;
-	
 	margin-top: 100px;
 	position: relative;
 	transform: translate3d(0px, 0px, 0px);
@@ -412,13 +468,8 @@ img.avatar {
 	z-index: 1000;
 	width: 50%;
 }
- 
 
-#yy-edit-article-title #title-in-edit-mode input, 
-input#yy-note-title-input, 
-input#yy-note-title-input:active, 
-input#yy-note-title-input:after, 
-input#yy-note-title-input:before {
+#yy-edit-article-title #title-in-edit-mode input, input#yy-note-title-input, input#yy-note-title-input:active, input#yy-note-title-input:after, input#yy-note-title-input:before {
 	background-color: transparent;
 	font-size: 22px;
 	border-left-style: none;
@@ -469,10 +520,10 @@ input#yy-note-title-input:before {
 	position: fixed;
 	z-index: 20000;
 	margin-bottom: 0px;
-	padding-top:8px;
+	padding-top: 8px;
 	padding-bottom: 6px;
 	border: 1px solid #bbc0ca;
-	text-align: center!important;
+	text-align: center !important;
 	background-color: rgb(229, 229, 229);
 	width: 898px;
 }

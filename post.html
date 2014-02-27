@@ -36,7 +36,7 @@
 	</head>
 
 	<body>
-		<div id="navbar-example" class="navbar navbar-fixed-top">
+		<div id="navbar-example" class="navbar navbar-fixed-top transparent0">
 			<div class="navbar-inner ">
 				<div class="container" style="width: auto;">
 					<a href="index.html" class="brand"><img src="assets/img/logo.png" alt="www.yynote.com"></a>
@@ -78,13 +78,12 @@
 			</div>
 		</div>
 
-		<div  class="topbar-show" >
-			<h3>Stay hungry, Stay foolish!</h3>
+		<div  class="topbar-padding" >
 		</div>
 
-		<div class="container-fluid">
+		<div class="container-fluid full-view">
 			<div class="row-fluid">
-				<div class="span9">
+				<div class="">
 
 					<!-- BENGIN POST -->
 					<div class="post">
@@ -95,8 +94,7 @@
 										<a href="post.html">YAR 并行RPC框架研究</a>
 									</div>
 									<p class="extra">
-										<label> <i class="icon-time"></i><em>2014-02-13 22:53</em> <em class="v-line">|</em> <i class="icon-eye-open"></i><em>53</em> <em class="v-line">|</em> <i class="icon-thumbs-up"></i><em>53</em> <em class="v-line">|</em> <i class="icon-comment"></i><em>53</em> </label>
-										<label> <i class="icon-tag"></i> <em class="tags"><a href="#">并行编程</a></em> <em class="tags"><a href="#">YAR</a></em> <em class="tags"><a href="#">RPC</a></em> <em class="v-line">|</em> <i class="icon-folder-close"></i> <em class="cat"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em> </label>
+										<label> <i class="icon-time"></i><em>2014-02-13 22:53</em></label>
 									</p>
 								</div>
 								<div class="content">
@@ -127,11 +125,6 @@
 										但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
 									</p>
 									<p>
-										前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-										其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-										http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-									</p>
-									<p>
 										这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
 										我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
 
@@ -261,241 +254,196 @@
 										其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
 										http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
 									</p>
-									<p>
-										这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-										我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-										对这些比较熟悉，就拿来对比一下。
-
-										好吧，步入正题：
-
-										Yar：yet another rpc，这是它的全称。
-
-										关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-										我也简单介绍下用法，下面的代码来自鸟哥的博客。
-									</p>
-									<p>
-										2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-									</p>
-									<p>
-										3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-										但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-									</p>
-									<p>
-										前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-										其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-										http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-									</p>
-									<p>
-										这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-										我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-										对这些比较熟悉，就拿来对比一下。
-
-										好吧，步入正题：
-
-										Yar：yet another rpc，这是它的全称。
-
-										关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-										我也简单介绍下用法，下面的代码来自鸟哥的博客。
-									</p>
-									<p>
-										2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-									</p>
-									<p>
-										3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-										但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-									</p>
-									<p>
-										前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-										其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-										http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-									</p>
-									<p>
-										这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-										我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-										对这些比较熟悉，就拿来对比一下。
-
-										好吧，步入正题：
-
-										Yar：yet another rpc，这是它的全称。
-
-										关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-										我也简单介绍下用法，下面的代码来自鸟哥的博客。
-									</p>
-									<p>
-										2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-									</p>
-									<p>
-										3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-										但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
+								 
+									<p class="extra extra-bottom">
+										<label class="user-action"> 
+											<i class="icon-thumbs-up"></i><em class="thumbs-up">53</em> 
+											 <em class="v-line">|</em> 
+											 <i class="icon-eye-open"></i><em>53</em>
+											 <em class="v-line">|</em> 
+											<i class="icon-comment"></i><em>53</em>
+										</label>
 									</p>
 								</div>
 							</div>
+
 						</div>
-					</div>
-					<!-- END POST -->
-					
-					<div class="yy-pagenation">
-						<p>上一篇:<a href="#">Linux 中网络驱动入门讲解一</a></p>
-						<p>下一篇:<a href="#">Linux 中网络驱动入门讲解二</a></p>
-						<p><a href="#">返回博客首页</a></p>
 					</div>
 				</div>
-
-				<div class="span3">
-					<div class="post-subject">
-						<div class="sj-title">
-							专栏
-						</div>
-						<ul class="sj-content">
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">高性能服务器中多线程锁相关</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">Linux并行编程研究</a>
-							</li>
-							<li class="sj-item">
-								<a href="#">更多 ... </a>
-							</li>
-						</ul>
-					</div>
-					<br />
-					<div class="post-tag-cloud">
-						<div class="tc-title">
-							标签
-						</div>
-						<div class="tc-content">
-							<span class="tc-item"><a href="#">Linux</a></span>
-							<span class="tc-item"><a href="#">高性能</a></span>
-							<span class="tc-item"><a href="#">服务器</a></span>
-							<span class="tc-item"><a href="#">多线程</a></span>
-							<span class="tc-item"><a href="#">并行编程</a></span>
-							<span class="tc-item"><a href="#">Netmap</a></span>
-							<span class="tc-item"><a href="#">DNS</a></span>
-							<span class="tc-item"><a href="#">Linux</a></span>
-							<span class="tc-item"><a href="#">并行编程</a></span>
-							<span class="tc-item"><a href="#">Netmap</a></span>
-							<span class="tc-item"><a href="#">DNS</a></span>
-							<span class="tc-item"><a href="#">Linux</a></span>
-							<span class="tc-item"><a href="#">高性能</a></span>
-							<span class="tc-item"><a href="#">服务器</a></span>
-							<span class="tc-item"><a href="#">多线程</a></span>
-							<span class="tc-item"><a href="#">并行编程</a></span>
-							<span class="tc-item"><a href="#">Netmap</a></span>
-							<span class="tc-item"><a href="#">DNS</a></span>
-						</div>
-
-					</div>
+				<!-- END POST -->
+				
+				<div class="post-tags-bottom">
+						<label> <i class="icon-tag"></i> <em class="tags"><a href="#">并行编程</a></em> <em class="tags"><a href="#">YAR</a></em> <em class="tags"><a href="#">RPC</a></em> <em class="v-line">|</em> <i class="icon-folder-close"></i> <em class="cat"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em> </label>
+				</div>
+				
+				<div class="yy-pagenation">
+					<p>
+						上一篇:<a href="#">Linux 中网络驱动入门讲解一</a>
+					</p>
+					<p>
+						下一篇:<a href="#">Linux 中网络驱动入门讲解二</a>
+					</p>
+					<p>
+						&larr; <a href="index.html">返回博客首页</a>
+					</p>
 				</div>
 			</div>
-			<br>
+			
+			<div class="comments">
+			</div>
+			
+			<!--
+			<div class="span3">
+			<div class="post-subject">
+			<div class="sj-title">
+			专栏
+			</div>
+			<ul class="sj-content">
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">高性能服务器中多线程锁相关</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">Linux并行编程研究</a>
+			</li>
+			<li class="sj-item">
+			<a href="#">更多 ... </a>
+			</li>
+			</ul>
+			</div>
+			<br />
+			<div class="post-tag-cloud">
+			<div class="tc-title">
+			标签
+			</div>
+			<div class="tc-content">
+			<span class="tc-item"><a href="#">Linux</a></span>
+			<span class="tc-item"><a href="#">高性能</a></span>
+			<span class="tc-item"><a href="#">服务器</a></span>
+			<span class="tc-item"><a href="#">多线程</a></span>
+			<span class="tc-item"><a href="#">并行编程</a></span>
+			<span class="tc-item"><a href="#">Netmap</a></span>
+			<span class="tc-item"><a href="#">DNS</a></span>
+			<span class="tc-item"><a href="#">Linux</a></span>
+			<span class="tc-item"><a href="#">并行编程</a></span>
+			<span class="tc-item"><a href="#">Netmap</a></span>
+			<span class="tc-item"><a href="#">DNS</a></span>
+			<span class="tc-item"><a href="#">Linux</a></span>
+			<span class="tc-item"><a href="#">高性能</a></span>
+			<span class="tc-item"><a href="#">服务器</a></span>
+			<span class="tc-item"><a href="#">多线程</a></span>
+			<span class="tc-item"><a href="#">并行编程</a></span>
+			<span class="tc-item"><a href="#">Netmap</a></span>
+			<span class="tc-item"><a href="#">DNS</a></span>
+			</div>
+
+			</div>
+			</div>
+			-->
+
+		</div>
+		<br>
 		</div>
 
 		<div class="bottom">
