@@ -42,7 +42,7 @@ p {
 	 */
 
 }
- 
+
 #navbar-example.transparent75 {
 	filter: alpha(opacity=75); /*IE滤镜 */
 	-moz-opacity: 0.75; /*Firefox私有  */
@@ -125,8 +125,7 @@ img.avatar {
 	padding-bottom: 20px;
 }
 
-.column-wrap  .post .content,
-.preview-wrap .post .content {
+.column-wrap  .post .content, .preview-wrap .post .content {
 	border-left: 1px solid #ff5f3e;
 }
 
@@ -160,17 +159,16 @@ img.avatar {
 .extra.extra-bottom label.user-action {
 	padding-top: 20px;
 }
-.extra.extra-bottom label.user-action i.icon-thumbs-up,
-.extra.extra-bottom label.user-action em.thumbs-up {
+.extra.extra-bottom label.user-action i.icon-thumbs-up, .extra.extra-bottom label.user-action em.thumbs-up {
 	cursor: pointer;
-	color: #ff5f3e!important;
+	color: #ff5f3e !important;
 }
 .extra.extra-bottom label.user-action i.icon-thumbs-up:hover {
-	color: #FF0F00!important;
-	font-size: 45px; 
+	color: #FF0F00 !important;
+	font-size: 45px;
 }
 .extra.extra-bottom label.user-action em.thumbs-up:hover {
-	color: #FF0F00!important;
+	color: #FF0F00 !important;
 }
 
 .extra.extra-bottom label.user-action em.thumbs-up {
@@ -185,13 +183,11 @@ img.avatar {
 	padding-right: 3px;
 }
 
-.post-tags-bottom .v-line,
-.extra .v-line {
+.post-tags-bottom .v-line, .extra .v-line {
 	margin: 0 11px 0 8px;
 }
 
-.post-tags-bottom i,
-.extra i {
+.post-tags-bottom i, .extra i {
 	padding-right: 8px;
 }
 
@@ -226,10 +222,10 @@ img.avatar {
 
 .post-tag-cloud .tc-content span.tc-item {
 	padding-right: 12px;
-	white-space:nowrap;
+	white-space: nowrap;
 }
 
-.post-tags-bottom label em a{
+.post-tags-bottom label em a {
 	font-size: 12px;
 	color: #0088CC;
 	padding-right: 3px;
@@ -238,14 +234,13 @@ img.avatar {
 	color: #005580;
 }
 
-.post-tags-bottom,
-.yy-pagenation {
+.comments-wrapper, .post-tags-bottom, .yy-pagenation {
 	padding-left: 20px;
 	padding-top: 15px;
 	padding-right: 15px;
 	padding-bottom: 15px;
 	background: #fff;
-	margin-bottom:15px;
+	margin-bottom: 15px;
 }
 
 .yy-pagenation p a {
@@ -423,7 +418,7 @@ img.avatar {
 	z-index: 90;
 	position: fixed;
 	top: 0px;
-	background-color: #f8f8f8;
+	background-color: #e9e7e0;
 	filter: alpha(opacity=100);
 	opacity: 1.0;
 }
@@ -558,6 +553,120 @@ img.avatar {
 }
 .wysiwyg-editor li {
 	line-height: 26px;
+}
+
+/**
+ *
+ */
+.comments-wrapper {
+	padding-bottom: 30px;
+}
+.comments-wrapper .cmt-wrapper-title {
+	font-size: 20px;
+	font-weight: 600;
+	
+	margin-bottom: 20px;
+}
+
+div.reply-box-expand {
+	border: 1px solid #0088cc;
+}
+
+div.reply-box, div.reply-box-expand {
+	margin-right: 30px;
+	padding-left: 5px;
+	padding-right: 10px;
+	margin-left: 5px;
+}
+div.reply-box .reply-action {
+	display: none;
+}
+
+div.reply-box .reply-action {
+	visibility: hidden;
+}
+
+div.reply-box textarea {
+	width: 100%;
+	height: 25px;
+	border-color: #DDD;
+	color: #888;
+	display: block;
+	resize: none;
+	outline: none;
+	background-color: white;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+div.reply-box textarea:hover {
+	border-color: #0088cc;
+}
+
+div.reply-box-expand textarea {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+flex-direction: column;
+
+-webkit-appearance: textarea;
+
+letter-spacing: normal;
+word-spacing: normal;
+text-transform: none;
+text-indent: 0px;
+text-shadow: none;
+
+}
+
+div.reply-box-expand textarea {
+	font-size: 14px;
+	line-height: 20px;
+	width: 100%;
+	height: 100px;
+	*height: 42px;
+	resize: none;
+	color: #333333;
+	border: none;
+	display: inline-block;
+	resize: none;
+	outline: none;
+	overflow-y: visible;
+	overflow-x: hidden;
+	white-space: nowrap;
+	
+	padding-bottom: 10px;
+	padding-top: 5px;
+	border-bottom: 1px solid #DDD;
+}
+
+div.reply-box textarea:-moz-placeholder, div.reply-box-expand textarea:-moz-placeholder {
+	color: #bbb;
+}
+div.reply-box textarea:focus::-webkit-input-placeholder, div.reply-box-expand textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+div.reply-action {
+	text-align: left;
+	margin-top:10px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+div.reply-action a.btn {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /**

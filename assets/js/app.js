@@ -84,3 +84,25 @@ function clearAllEditor() {
 	$("#title-in-edit-mode input").val("");
 	$("#yy-wysiwyg-editor #editor").html("");
 }
+
+
+/**
+ * For comment input box
+ */
+function onCommentTextAreaFoucsIn() {
+	var obj = event.srcElement;
+	obj.parentNode.className = "reply-box-expand";
+}
+
+function onCommentTextAreaFoucsOut() {
+	var obj = event.srcElement;
+
+	if (obj.value == "") {
+		obj.parentNode.className = "reply-box";
+	}
+}
+
+function onCommentActionSubmitBtnClick() {
+	var obj = event.srcElement;
+
+}
