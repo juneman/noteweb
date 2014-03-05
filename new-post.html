@@ -110,7 +110,7 @@
 				</div>
 			</div>
 		</div>
-	 
+
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span12" id="padding-toolbar"></div>
@@ -122,23 +122,61 @@
 				<div id="yy-edit-article-title">
 					<div id="title-in-edit-mode" >
 						<input id="yy-note-title-input" type="text" value="" placeholder="please input new title ... ">
-						<a href="#" class="btn btn-medium btn-danger" id="btnSave" onclick="saveAndCloseAllEditor()" >Save</a>
-						<a href="#" class="btn btn-mini btn-link" id="btnClearAll" onclick="clearAllEditor()">Clear all</a>
 					</div>
 				</div>
 				<div id="yy-wysiwyg-editor">
-					<div class="wysiwyg-editor" id="editor" contenteditable="">
-					</div>
+					<div class="wysiwyg-editor" id="editor" contenteditable=""></div>
 				</div>
 
 				<!-- start of content -->
 				<div id="content"></div>
 				<!-- end of content -->
+
+				<div class="post-action-bar-wraper">
+					<div class="post-action-bar-panel">
+						<div class="btn-group dropup">
+							<a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Country <span class="caret"></span></a>
+							<ul class="dropdown-menu" id="post-action-cat-select">
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item I</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item II</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item III</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Other</a>
+								</li>
+							</ul>
+						</div>
+						<div class="btn-group dropup">
+							<a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Country <span class="caret"></span></a>
+							<ul class="dropdown-menu" id="post-action-cat-select">
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item I</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item II</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Item III</a>
+								</li>
+								<li>
+									<span class="glyphicon glyphicon-star"></span><a class="" href="#">Other</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="btn btn-medium btn-danger" id="" onclick="saveAndCloseAllEditor()" >Publish</a>
+					<a href="javascript:void(0)" class="btn btn-mini btn-link" id="" onclick="clearAllEditor()">Clear all</a>
+				</div>
 			</div>
 		</div>
-		
+
 		<br />
-		
+
 		<div class="bottom">
 			<div class="wrapper">
 				<div class="bottom-text">

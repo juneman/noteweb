@@ -56,7 +56,10 @@ goto_top_itv = setInterval('goto_top_timer()', 50);
 ///////////////////////////////////////////////////////////
 
 $(function() {
-	$('.cmt-vote').tooltip();	
+	$("#post-action-cat-select li a").click(function(){
+  		var selText = $(this).text();
+  		$(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+	});
 });
  
 function trim(str) { 
@@ -85,13 +88,16 @@ function saveAndCloseAllEditors() {
  		return 1;
  	}
  	
-	alert(contents);
+	alert($('.btn-select').text()+", "+$('.btn-select2').text());
+
 	return 0;
 }
 
 function clearAllEditor() {
 	$("#title-in-edit-mode input").val("");
 	$("#yy-wysiwyg-editor #editor").html("");
+	
+	alert($('.btn-select').text()+", "+$('.btn-select2').text());
 }
 
 

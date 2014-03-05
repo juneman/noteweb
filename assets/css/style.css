@@ -178,13 +178,18 @@ img.avatar {
 	font-size: 42px;
 }
 
-.post .extra label em.tags a, .post .extra label em.cat a {
+.post .extra label em.cats a, .post .extra label em.columns a {
 	color: #333333;
-	padding-right: 3px;
+	padding-right: 1px;
 }
 
 .post-tags-bottom .v-line, .extra .v-line {
 	margin: 0 11px 0 8px;
+}
+
+.post-tags-bottom .v-line1, .extra .v-line1 {
+	margin: 0 2px 0 5px;
+	color: #999;
 }
 
 .post-tags-bottom i, .extra i {
@@ -553,6 +558,24 @@ img.avatar {
 }
 .wysiwyg-editor li {
 	line-height: 26px;
+}
+
+.yy-content-wrapper #yy-content .post-action-bar-wraper {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	
+	background-color: #f7f8fa;
+}
+
+.post-action-bar-wraper .post-action-bar-panel {
+	margin-bottom: 15px;
+}
+.post-action-bar-wraper .post-action-bar-panel .btn-group {
+	display: inline-block;
 }
 
 /**
