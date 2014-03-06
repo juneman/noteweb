@@ -563,19 +563,26 @@ img.avatar {
 .yy-content-wrapper #yy-content .post-action-bar-wraper {
 	margin-top: 20px;
 	margin-bottom: 50px;
-	
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	
 	background-color: #f7f8fa;
+	border: 1px solid #bbc0ca;
+	padding-bottom: 30px;
 }
 
 .post-action-bar-wraper .post-action-bar-panel {
 	margin-bottom: 15px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background-color: rgb(229, 229, 229);
 }
-.post-action-bar-wraper .post-action-bar-panel .btn-group {
-	display: inline-block;
+
+.post-action-bar-wraper .post-action-bar-panel .panel-body {
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.post-action-cat-select li a:hover {
+	background-color: #0088cc;
+	color: #333;
 }
 
 /**

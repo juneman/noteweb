@@ -56,7 +56,7 @@ goto_top_itv = setInterval('goto_top_timer()', 50);
 ///////////////////////////////////////////////////////////
 
 $(function() {
-	$("#post-action-cat-select li a").click(function(){
+	$(".post-action-cat-select li a").click(function(){
   		var selText = $(this).text();
   		$(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 	});
