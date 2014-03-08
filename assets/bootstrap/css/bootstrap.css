@@ -4232,7 +4232,11 @@ div.subnav .nav > li:first-child > a:hover {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  background: #fcfbfd;
+  
+  -webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+
 }
 .modal-header {
   border-bottom: none;
@@ -4337,3 +4341,5 @@ pre.prettyprint,
   padding-left:0px;
   margin-bottom: 20px;
 }
+
+

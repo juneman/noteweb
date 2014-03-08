@@ -26,7 +26,7 @@
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
+			
 		<!-- Fav and touch icons -->
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
@@ -266,7 +266,7 @@
 				<!-- END POST -->
 
 				<div class="post-tags-bottom">
-					<label> <i class="icon-tag"></i> <em class="tags"><a href="#">并行编程</a></em> <em class="tags"><a href="#">YAR</a></em> <em class="tags"><a href="#">RPC</a></em> <em class="v-line">|</em> <i class="icon-folder-close"></i> <em class="cat"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em> </label>
+					<label> <i class="icon-pushpin"></i> <em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em> <em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em> <em class="cats"><a href="#">RPC</a></em> <em class="v-line">|</em> <i class="icon-folder-close"></i> <em class="cat"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em> </label>
 				</div>
 
 				<div class="yy-pagenation">
@@ -287,120 +287,131 @@
 					评论
 				</div>
 				<div id="reply-box" class="reply-box">
-					<textarea id="ct01" wrap="soft"
-									data-fid="18926879888" autocomplete="off" placeholder=" 我要评论..."  
-									onfocusout="onCommentTextAreaFoucsOut()" 
-									onfocusin="onCommentTextAreaFoucsIn()"></textarea>
+					<textarea id="ct01" wrap="soft" onfocusin="onCommentTextAreaFoucsIn()" 
+									data-fid="18926879888" autocomplete="off" placeholder=" 我要评论..."></textarea>
 					<div class="reply-action">
-						<a class="btn btn-success "> 评论 </a>
+						<a class="btn btn-danger" href="#reply-user-info-input-dialog" data-toggle="modal">发表评论!</a>
+					</div>
+
+					<!-- begin-->
+					<div id="reply-user-info-input-dialog" class="modal styled hide fade" tabindex="-1"
+					role="dialog" aria-labelledby="reply-login-label"  aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<span id="reply-login-label">Log in</span>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<div class="control-group">
+									<label class="control-label" for="inputNickname">昵称</label>
+									<div class="controls">
+										<input type="text" id="inputNickname" class="input-xlarge" placeholder="仅用于在评论中显示">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">Email</label>
+									<div class="controls">
+										<input type="password" id="inputEmail" class="input-xlarge" placeholder="Email不会公开.仅用于登录时身份识别.">
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+										<a class="btn btn-success">发表评论 </a>
+									</div>
+									<br />
+									<p class="aligncenter margintop20">
+										<span class="text-note"><i class="icon-info-sign text-info"></i> 本网站采用昵称+Email方式登录,无需注册.</span> 
+									</p>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 				<ul class="comments-list">
 					<li class="comment-item">
-						<div class="cmt-vote-bar">
-							<div class="cmt-vote cmt-vote-up">
-								<i class="icon-thumbs-up"></i><span>28</span>
-							</div>
-							<div class="cmt-vote cmt-vote-down">
-								<i class="icon-thumbs-down"></i><span>12222</span>
-							</div>
-						</div>
 						<div class="cmt-content">
 							<div class="comment-header">
 								<span class="cmt-user-name">如风</span>
 								<span class="cmt-reply-date"><i class="icon-time"></i> <em>2013-02-04</em></span>
 							</div>
 							<div class="comment-body">
-								<p>讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
-								</p> 
+								<p>
+									讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
+								</p>
 							</div>
 							<div class="comment-footer">
-							    <span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"> <i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"> <i class="icon-thumbs-up"></i><span>赞 (332)</span> </span>
 							</div>
 						</div>
 					</li>
-					
+
 					<li class="comment-item">
-						<div class="cmt-vote-bar">
-							<div class="cmt-vote cmt-vote-up">
-								<i class="icon-thumbs-up"></i><span>28</span>
-							</div>
-							<div class="cmt-vote cmt-vote-down">
-								<i class="icon-thumbs-down"></i><span>12222</span>
-							</div>
-						</div>
 						<div class="cmt-content">
 							<div class="comment-header">
 								<span class="cmt-user-name">如风</span>
 								<span class="cmt-reply-date"><i class="icon-time"></i> <em>2013-02-04</em></span>
 							</div>
 							<div class="comment-body">
-								<p>讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
-								</p> 
+								<p>
+									讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
+								</p>
 							</div>
 							<div class="comment-footer">
-							    <span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"> <i class="icon-thumbs-up"></i><span>赞 (332)</span> </span>
 							</div>
 						</div>
 					</li>
-					
+
 					<li class="comment-item">
-						<div class="cmt-vote-bar">
-							<div class="cmt-vote cmt-vote-up">
-								<i class="icon-thumbs-up"></i><span>28</span>
-							</div>
-							<div class="cmt-vote cmt-vote-down">
-								<i class="icon-thumbs-down"></i><span>12222</span>
-							</div>
-						</div>
 						<div class="cmt-content">
 							<div class="comment-header">
 								<span class="cmt-user-name">如风</span>
 								<span class="cmt-reply-date"><i class="icon-time"></i> <em>2013-02-04</em></span>
 							</div>
 							<div class="comment-body">
-								<p>讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
-								</p> 
+								<p>
+									讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
+								</p>
 							</div>
 							<div class="comment-footer">
-							    <span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"> <i class="icon-thumbs-up"></i><span>赞 (332)</span> </span>
 							</div>
 						</div>
 					</li>
-					
+
 					<li class="comment-item">
-						<div class="cmt-vote-bar">
-							<div class="cmt-vote cmt-vote-up">
-								<i class="icon-thumbs-up"></i><span>28</span>
-							</div>
-							<div class="cmt-vote cmt-vote-down">
-								<i class="icon-thumbs-down"></i><span>12222</span>
-							</div>
-						</div>
 						<div class="cmt-content">
 							<div class="comment-header">
 								<span class="cmt-user-name">如风</span>
 								<span class="cmt-reply-date"><i class="icon-time"></i> <em>2013-02-04</em></span>
 							</div>
 							<div class="comment-body">
-								<p>讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
-								</p> 
+								<p>
+									讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，， 讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，讲解的很详细，内容很好，，，，
+								</p>
 							</div>
 							<div class="comment-footer">
-							    <span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"><i class="icon-share-alt"></i><span>回复 (332)</span> </span>
+								<span class="cmt-reply-action"> <i class="icon-thumbs-up"></i><span>赞 (332)</span> </span>
 							</div>
 						</div>
 					</li>
 					<li>
-						无更多评论了 .... 
+						无更多评论了 ....
 					</li>
 				</ul>
 			</div>
-
+			
+			<div class="btn-back-toTop style-2">
+				<a class="btn btn-inverse li btn-medium" href="javascript:void(0)"><i class="icon-chevron-up"></i>Top</a>
+			</div>
 		</div>
 		<br>
-		
-		<a  href="javascript:void(0)" onclick="goto_top()">Top</a>
 		
 		<div class="bottom">
 			<div class="wrapper">
@@ -413,11 +424,13 @@
 		<!-- javascript
 		================================================== -->
 		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		
 		<script src="assets/bootstrap/js/bootstrap.js"></script>
 		<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
 		<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
 		<script src="assets/bootstrap/js/bootstrap-tooltip.js"></script>
-		
+
 		<script src="assets/js/app.js"></script>
 
 	</body>
