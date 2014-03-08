@@ -831,6 +831,9 @@ li.comment-item {
 .text-note {
 	color: #333;
 }
+.text-note i {
+	color: #D24726;
+}
 
 .aligncenter {
 	text-align: center;
