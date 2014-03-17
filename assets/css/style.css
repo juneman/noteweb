@@ -813,6 +813,13 @@ li.comment-item {
 /***
  *
  */
+
+#reply-user-info-input-dialog {
+	background-color: #fff;
+	border: 1px solid #888;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,.4);
+}
+
 #reply-user-info-input-dialog .modal-header {
 	background-color: #D24726;
 	padding: 9px 15px;
@@ -856,7 +863,7 @@ li.comment-item {
 }
 
 .btn-back-toTop i {
-	margin-right:3px;
+	margin-right: 3px;
 }
 
 .btn-back-toTop a.btn {
