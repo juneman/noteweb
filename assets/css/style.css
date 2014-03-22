@@ -35,6 +35,10 @@ ul {
 	position: fixed;
 }
 
+.absoluted {
+	position: absolute;
+}
+
 /**
  *
  */
@@ -61,17 +65,19 @@ ul {
  */
 
 .bottom-wrapper {
-	height: 100px;
+	margin: 0 auto;
+	width: 100%;
+	height: 300px;
+	background-color: red;
 }
 
 .bottom {
-	position: relative;
-	width: 100%;
+	position:relative;
+	width: 50%;
 	font-size: 12px;
 	line-height: 1.5em;
 	margin-top: 50px;
 	margin-bottom: 30px;
-	margin-left: 250px;
 }
 
 .bottom .bottom-text {
@@ -89,25 +95,14 @@ ul {
 	position: relative;
 }
 
-.col-left {
-	float: left;
-	width: 230px;
-	position: relative;
-}
-
-.col-right {
-	float: left;
-	margin-left: 50px;
-	position: relative;
-	min-height: 506px;
-}
-
 .aside-wrapper {
 	width: 230px;
+	float: left;
 }
 
 .aside-wrapper.fixed {
 	position: fixed;
+	top: 0;
 }
 
 .yy-logo {
@@ -116,7 +111,8 @@ ul {
 
 .content-body-wrapper {
 	position: relative;
-	margin-left: 250px;
+	margin-left: 260px;
+	position: left;
 }
 
 .body-padding {
