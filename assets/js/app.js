@@ -1,6 +1,22 @@
 /**
  * @author dubin
  */
+/**
+ * String Util 
+ */
+function trim(str) { 
+　　     return str.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+function ltrim(str) { 
+　　     return str.replace(/(^\s*)/g,"");
+}
+
+function rtrim(str) { 
+　　     return str.replace(/(\s*$)/g,"");
+}
+
+
 /***
  * 
  * back to Top
@@ -28,23 +44,63 @@ $(function() {
 ///////////////////////////////////////////////////////////
 
 $(function() {
+	var showNavSearchBar = function() {
+		$('.aside-navbar .aside-nav-search').removeClass('inactive');
+  		 $('.aside-navbar .aside-nav-search').addClass('active');
+  		 $('.aside-navbar .aside-nav-search.active input').focus();
+  		 $('.aside-navbar .aside-nav-search.active input').animate(
+  		 	{width: 150}, 200
+  		 );
+	};
+	
+	var hideNavSearchBar = function() {
+		var val = trim($('.aside-navbar .aside-nav-search.active input').val());
+		if (val != "") return;
+		
+		$('.aside-navbar .aside-nav-search.active input').animate(
+  		 	{width: 0}, 200, function() {
+  		 		 $('.aside-navbar .aside-nav-search').removeClass('active');
+  		 		$('.aside-navbar .aside-nav-search').addClass('inactive');
+  		 	}
+  		 );
+	};
+	
+	$(".aside-navbar .aside-nav-search").hover(function(){
+		 showNavSearchBar();
+	});
+	
+	$(".aside-navbar .aside-nav-search-wrapper").focusout(function(){
+  		 hideNavSearchBar();
+	}).mouseleave(function(){
+		 hideNavSearchBar();
+	});
+	
+	$('.aside-navbar .aside-nav-search span.clear-icon').click(function(){
+		 $('.aside-navbar .aside-nav-search.active input').val("");
+	});
+	
+	/// bind 
+	$('.aside-navbar .aside-nav-search input').keydown(function(event) {  
+         if(event.keyCode==13){  
+             alert("nihoa");  
+        }  
+     });  
+
+	
+});
+ 
+
+
+////////////////////////////////////////
+
+
+
+$(function() {
 	$(".post-action-cat-select li a").click(function(){
   		var selText = $(this).text();
   		$(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 	});
 });
- 
-function trim(str) { 
-　　     return str.replace(/(^\s*)|(\s*$)/g, "");
-}
-
-function ltrim(str) { 
-　　     return str.replace(/(^\s*)/g,"");
-}
-
-function rtrim(str) { 
-　　     return str.replace(/(\s*$)/g,"");
-}
  
 /**
  * 0 : view 

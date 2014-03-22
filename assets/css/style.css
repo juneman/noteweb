@@ -1,10 +1,10 @@
 @import url('template.css');
 
 body {
-	background: #f8f8f8;
 	font-size: 12px;
+	font-weight: 100;
 	line-height: 1.5em;
-	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei";
+	font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, sans-serif;
 }
 
 p {
@@ -26,8 +26,6 @@ ul {
 	height: 1px;
 	margin: 8px 1px;
 	overflow: hidden;
-	background-color: white;
-	border-bottom: 1px solid #d8d8d8;
 }
 
 /**
@@ -61,6 +59,11 @@ ul {
 /**
  *
  */
+
+.bottom-wrapper {
+	height: 100px;
+}
+
 .bottom {
 	position: relative;
 	width: 100%;
@@ -82,12 +85,24 @@ ul {
  */
 .content-wrapper {
 	margin: 0 auto;
-	width: 66%;
-	min-width: 880px;
+	width: 75%;
+	position: relative;
+}
+
+.col-left {
+	float: left;
+	width: 230px;
+	position: relative;
+}
+
+.col-right {
+	float: left;
+	margin-left: 50px;
+	position: relative;
+	min-height: 506px;
 }
 
 .aside-wrapper {
-	display: inline-block;
 	width: 230px;
 }
 
@@ -105,5 +120,70 @@ ul {
 }
 
 .body-padding {
-	height: 100px;
+	height: 50px;
 }
+
+.aside-navbar {
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.aside-navbar ul.aside-nav li {
+	cursor: pointer;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 22px;
+	text-indent: 5px;
+}
+
+.aside-navbar ul.aside-nav li span {
+	padding-left: 30px;
+}
+
+.aside-navbar ul {
+	padding-left: 0px;
+}
+
+.aside-navbar ul.L1 {
+	margin-bottom: 0;
+}
+
+.aside-navbar ul.L2 li span {
+	padding-left: 75px;
+}
+
+.aside-navbar .aside-nav-search-wrapper {
+	margin-top: 10px;
+	padding-right: 5px;
+	display: inline-block;
+	height: 28px;
+	padding-left: 30px;
+}
+
+.aside-nav-search-wrapper .aside-nav-search span.search-icon {
+	padding-left: 5px;
+	padding-right: 2px;
+}
+
+.aside-nav-search-wrapper .aside-nav-search input {
+	width: 0px;
+	height: 28px;
+	padding: 5px 2px 4px 0px;
+	font-size: 14px;
+	font-weight: 100;
+	border: none;
+	outline: medium;
+	background-color: transparent;
+}
+
+.aside-nav-search-wrapper .aside-nav-search span.clear-icon {
+	display: none;
+	cursor: pointer;
+	padding-right: 3px;
+}
+.aside-nav-search-wrapper .aside-nav-search.active span.clear-icon {
+	display: inline-block;
+}
+

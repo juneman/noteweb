@@ -8,11 +8,16 @@
  */
 
 body.default {
-	background: #f8f8f8;
+	background: #EEEEEE;
 }
 
 body.default a {
 	color: #FF6666;
+}
+
+.default .divider {
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
 }
 
 .default .yy-logo {
@@ -21,9 +26,31 @@ body.default a {
 .default .aside-navbar {
 	background-color: #FFFFFF;
 }
- 
+
 .default .content-body {
 	background-color: #FFFFFF;
+}
+
+.default .aside-navbar ul.aside-nav li span {
+	color: #333333;
+}
+
+.default .aside-navbar ul.aside-nav li.active span, .default .aside-navbar ul.aside-nav li:hover span {
+	color: #FF6666;
+}
+
+.default .aside-navbar ul.aside-nav li.active, .default .aside-navbar ul.aside-nav li:hover {
+	background-color: #f4f4f4;
+}
+
+.default .aside-navbar .aside-nav-search.active {
+	background-color: #FF6666 !important;
+	border: 1px solid #FF6666;
+	color: #ffffff;
+}
+
+.default .aside-navbar .aside-nav-search.inactive:hover {
+	color: #FF6666;
 }
 
 /**
@@ -39,7 +66,7 @@ body.style-1 {
 .style-1 .aside-navbar {
 	background-color: #005580;
 }
- 
+
 .style-1 .content-body {
 	background-color: #005580;
 }
