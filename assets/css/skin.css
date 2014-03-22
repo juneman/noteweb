@@ -1,0 +1,45 @@
+/**
+ * 	author: www.yynote.com
+ *  2014.3.21
+ */
+
+/**
+ * 	default skin
+ */
+
+body.default {
+	background: #f8f8f8;
+}
+
+body.default a {
+	color: #FF6666;
+}
+
+.default .yy-logo {
+	background-color: #FF6666;
+}
+.default .aside-navbar {
+	background-color: #FFFFFF;
+}
+ 
+.default .content-body {
+	background-color: #FFFFFF;
+}
+
+/**
+ * 	sytle-1
+ */
+body.style-1 {
+	background: black;
+}
+
+.style-1 .yy-logo {
+	background-color: red;
+}
+.style-1 .aside-navbar {
+	background-color: #005580;
+}
+ 
+.style-1 .content-body {
+	background-color: #005580;
+}

@@ -12,6 +12,7 @@
 
 		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/skin.css" rel="stylesheet">
 		<!--
 		<link href="assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -35,526 +36,659 @@
 		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 
-	<body>
-		<div id="navbar-example" class="navbar navbar-fixed-top">
-			<div class="navbar-inner ">
-				<div class="container" style="width: auto;">
-					<a href="index.html" class="brand"><img src="assets/img/logo.png" alt="www.yynote.com"></a>
-					<ul class="nav">
-						<li class="active">
-							<a href="index.html">博客 </a>
-						</li>
-						<li>
-							<a href="columns-list.html">专栏 </a>
-						</li>
-						<li>
-							<a href="#">代码 </a>
-						</li>
-						<li>
-							<a href="#">资料 </a>
-						</li>
-						<li>
-							<a href="#">收藏 </a>
-						</li>
-						<li>
-							<a href="#">下载 </a>
-						</li>
-					</ul>
-					<ul class="nav">
-						<input type="search" class="input-xlarge navbar-search" placeholder="输入你要搜索的关键字 ...">
-					</ul>
-					<!--
-					<ul class="nav pull-right padding-right20">
-					<li>
-					<a href="/yynote.com/signup.html">注册</a>
-					</li>
-					<li>
-					<a href="/yynote.com/login.html">登录</a>
-					</li>
-					</ul>
-					-->
-
+	<body class="default">
+ 	
+		<div class="content-wrapper">
+			<div id="aside-wrapper1" class="aside-wrapper fixed">
+				<div class="yy-logo">
+					
 				</div>
-			</div>
-		</div>
-
-		<div  class="topbar-padding" >
-		</div>
-
-		<div class="container-fluid preview-wrap">
-			<div class="row-fluid">
-				<div class="span9">
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i>
-											<em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i>
-											<em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i><em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i><em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i><em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					<!-- BENGIN POST -->
-					<div class="post">
-						<div class="row-fluid">
-							<div class="span12">
-								<div class="head">
-									<div class="title">
-										<a href="post.html">YAR 并行RPC框架研究</a>
-									</div>
-									<p class="extra">
-										<label>
-											<i class="icon-time"></i><em>2014-02-13 22:53</em> 
-											<em class="v-line">|</em>
-											<i class="icon-eye-open"></i><em>53</em>
-											<em class="v-line">|</em>
-											<i class="icon-thumbs-up"></i><em>531</em>
-											<em class="v-line">|</em>
-											<i class="icon-comment"></i><em>53</em>
-										</label>
-										<label>
-											<i class="icon-pushpin"></i>
-											<em class="cats"><a href="#">并行编程</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">YAR</a></em><em class="v-line1">/</em>
-											<em class="cats"><a href="#">RPC</a></em> 
-											<em class="v-line">|</em>
-											<i class="icon-folder-close"></i><em class="columns"><a href="columns.html">YAR并行RPC框架研究系列讲解</a></em>
-										</label>
-									</p>
-								</div>
-								<div class="content">
-									<p>
-											前几天，部门召开了PHP技术峰会 学习会议，大家分别对这次会议的PPT 做了简单的介绍，
-											其中提到了 鸟哥【惠新辰】的一篇PPT《微博LAMP 演变》，如果谁有需要可以去谷歌搜，或者去
-											http://www.laruence.com/2013/08/15/2913.html  他的博客去看一下，我就不提供下载链接了。
-										</p>
-										<p>
-											这篇PPT中提到了几个点： Yaf，Yac，Yar；我们会后也分任务对这些去做一些了解。
-											我选了Yar，去年5月份，因为一淘首页要做一次Bigpipe的改版，我用C写过一个并行化的PHP扩展，
-
-											对这些比较熟悉，就拿来对比一下。
-
-											好吧，步入正题：
-
-											Yar：yet another rpc，这是它的全称。
-
-											关于一些基本介绍 http://www.laruence.com/2012/09/15/2779.html可以去 鸟哥的博客去了解下。
-
-											我也简单介绍下用法，下面的代码来自鸟哥的博客。
-										</p>
-										<p>
-											2. CAS： CAS的涵义不多介绍了。使用CAS时不像上锁那样需要一次上下文切换，但是也需要处理器锁住它的指令流水线来保证原子性，并且还要加上Memory Barrier来保证其结果可见。
-										</p>
-										<p>
-											3. Memory Barrier: 大家都知道现代CPU是乱序执行的，也就是程序顺序与实际的执行顺序很可能是不一致的。在单线程执行时这不是个问题，
-											但是在多线程环境下这种乱序就可能会对执行结果产生很大的影响了。memory barrier提供了一种控制程序执行顺序的手段, 关于其更多介绍，可以参考 http://en.wikipedia.org/wiki/Memory_barrier
-										</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END POST -->
-					
-					
-					
-					 
-					<!--  pagination -->
-					<div class="pagination">
+				<div class="aside-navbar">
+					<ul>
+						<li>
+							fdasf
+						</li>
+						<li>
+							fdasf
+						</li>
+						<li>
+							fdasf
+						</li>
 						<ul>
-							<li class="disabled">
-								<a href="#">上一页</a>
+							fadsfadsf
+							<li>
+								111
 							</li>
-							<li  class="enable">
-								<a href="#">下一页</a>
+							<li>
+								111
+							</li>
+							<li>
+								111
 							</li>
 						</ul>
-					</div>
-					<!--  end of pagination -->
-				</div>
+					</ul>
 
-				<div class="span3">
-					
-					<div class="post-cats">
-						<div class="cats-title">
-							分类目录
-						</div>
-						<ul class="cats-content cats-level-1">
-							<li class="cat-item-L1">
-								<a href="#">Linux并行编程研究</a>
-								<ul class="cats-level-2">
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-								</ul>
-							</li>
-							
-							<li class="cat-item-L1"><a href="#">Linux并行编程研究</a>
-								<ul class="cats-level-2">
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-								</ul>
-							</li>
-							
-							<li class="cat-item-L1"><a href="#">Linux并行编程研究</a>
-								<ul class="cats-level-2">
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">高性能服务器中多线程锁相关</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-									<li class="cat-item-L2"><a href="#">Linux并行编程研究</a></li>
-								</ul>
-							</li>
-						 
-						</ul>
-					</div>
-					<br />
-					<div class="post-subject">
-						<div class="sj-title">
-							专栏
-						</div>
-						<ul class="sj-content">
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">高性能服务器中多线程锁相关</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">Linux并行编程研究</a></li>
-							<li class="sj-item"><a href="#">更多 ... </a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
-			<br>
-		</div>
-		
-		<div class="btn-back-toTop style-2">
-				<a class="btn btn-inverse li btn-medium" href="javascript:void(0)" ><i class="icon-chevron-up"></i>Top</a>
+
+			<div class="content-body-wrapper">
+				<div class="body-padding"></div>
+				<div class="content-body container-fluid">
+					<div class="row-fluid">
+						<div class="col-md-12">
+							999999999
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+							<p>
+								dfasfdsfasdfdasf
+							</p>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
 		</div>
 
-		<div class="bottom">
-			<div class="wrapper">
-				<div class="bottom-text">
-					&copy;2012 <a href="#">YYNOTE.COM</a> All Rights Resevred.
+		<div class="btn-back-toTop">
+			<a href="javascript:void(0)" ></a>
+		</div>
+
+		<div class="content-wrapper">
+			<div class="bottom">
+				<div class="wrapper">
+					<div class="bottom-text">
+						&copy;2012 <a href="#">YYNOTE.COM</a> All Rights Resevred.
+					</div>
 				</div>
 			</div>
 		</div>
