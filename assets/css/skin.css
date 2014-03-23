@@ -7,12 +7,13 @@
  * 	default skin
  */
 
-body.default {
-	background: #EEEEEE;
+body.default  ::selection {
+background: #FF6666;
+color: #fff;
 }
 
-body.default a {
-	color: #FF6666;
+body.default {
+	background: #EEEEEE;
 }
 
 .default .divider {
@@ -35,7 +36,12 @@ body.default a {
 	color: #333333;
 }
 
-.default .aside-navbar ul.aside-nav li.active span, .default .aside-navbar ul.aside-nav li:hover span {
+body.default a,
+.default .aside-navbar ul.aside-nav li.active span, 
+.default .aside-navbar ul.aside-nav li:hover span,
+.default .aside-navbar .aside-nav-search.inactive:hover,
+.default .comment-footer .cmt-reply-action:hover,
+.default .comment-footer .cmt-reply-action:hover i  {
 	color: #FF6666;
 }
 
@@ -45,13 +51,49 @@ body.default a {
 
 .default .aside-navbar .aside-nav-search.active {
 	background-color: #FF6666 !important;
-	border: 1px solid #FF6666;
 	color: #ffffff;
 }
 
-.default .aside-navbar .aside-nav-search.inactive:hover {
-	color: #FF6666;
+.default .post .head:first-child {
+	border-left: 6px solid #FF6666;
 }
+
+.default .cmt-content .comment-header .cmt-reply-date ,
+.default .comment-footer ,
+.default  .post .head .extra span {
+	color: #999;
+}
+
+.default ul.comments-list {
+	border-top: 1px solid #DDD;
+}
+
+.default .aside-navbar .aside-nav-search.active,
+.default div.reply-box textarea:hover {
+	border: 1px solid #FF6666;
+}
+
+.default div.reply-box-expand {
+	border: 1px solid #DDD;
+}
+
+.default div.reply-box textarea {
+	border-color: #FF6666;
+	background-color: white;
+}
+
+.default div.reply-box-expand textarea {
+	color: #333;
+	border-bottom: 1px solid #DDD;
+}
+
+.default li.comment-item {
+	border-bottom: 1px solid #DDD;
+}
+
+.default .reply-action input {
+}
+
 
 /**
  * 	sytle-1

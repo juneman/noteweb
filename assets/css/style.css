@@ -13,6 +13,8 @@ p {
 
 a {
 	text-decoration: none;
+	font-size: 12px;
+	font-weight: 100;
 }
 
 ul {
@@ -113,6 +115,7 @@ ul {
 	position: relative;
 	margin-left: 260px;
 	position: left;
+	min-height: 800px;
 }
 
 .body-padding {
@@ -126,11 +129,11 @@ ul {
 
 .aside-navbar ul.aside-nav li {
 	cursor: pointer;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 	text-transform: uppercase;
 	font-size: 14px;
-	line-height: 22px;
+	line-height: 19px;
 	text-indent: 5px;
 }
 
@@ -183,3 +186,271 @@ ul {
 	display: inline-block;
 }
 
+
+
+/**
+ *
+ */
+.content-body,
+.content-body .row-fluid,
+.content-body .row-fluid .col-md-12 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.post {
+	margin-bottom: 15px;
+	padding-right: 20px;
+}
+
+.post .head {
+	padding-left: 15px;
+	padding-top: 6px;
+}
+
+.post .content {
+	padding-left: 22px;
+	margin-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.post .content p {
+	line-height: 23px;
+}
+
+.post .head .title {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-align: left;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 600;
+}
+
+.post .head .extra {
+	padding-bottom: 3px;
+	margin: 0;
+}
+
+.post .head .extra span {
+	margin-bottom: 0px;
+	padding-bottom: 4px;
+	font-size: 12px;
+	font-weight:100;
+	color: #999;
+}
+
+.post-tags-bottom .v-line, .extra .v-line {
+	margin: 0 11px 0 8px;
+}
+
+.post-tags-bottom .v-line1, .extra .v-line1 {
+	margin: 0 2px 0 5px;
+	color: #999;
+}
+
+.post-tags-bottom i, .extra i {
+	padding-right: 8px;
+}
+
+.post-tags-bottom label em a {
+	font-size: 12px;
+	padding-right: 3px;
+}
+
+.comments-wrapper, .post-tags-bottom, .yy-pagenation {
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+}
+
+.yy-pagenation p a {
+	padding-left: 10px;
+}
+
+.yy-pagenation p:last-child a {
+	padding-left: 0px;
+}
+
+.yy-pagenation p {
+	margin-bottom: 4px;
+}
+/*
+ * 
+ * 
+ * 
+ */
+/**
+ *
+ */
+.comments-wrapper {
+	padding-bottom: 30px;
+	height: auto;
+}
+.comments-wrapper .cmt-wrapper-title {
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+div.reply-box, div.reply-box-expand {
+	margin-right: 30px;
+	padding-left: 5px;
+	padding-right: 10px;
+	margin-left: 5px;
+}
+div.reply-box .reply-action {
+	display: none;
+}
+
+div.reply-box .reply-action {
+	visibility: hidden;
+}
+
+div.reply-box textarea {
+	width: 100%;
+	height: 25px;
+	display: block;
+	resize: none;
+	outline: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+div.reply-box-expand textarea {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	flex-direction: column;
+	-webkit-appearance: textarea;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+}
+
+div.reply-box-expand textarea {
+	font-size: 14px;
+	line-height: 20px;
+	width: 100%;
+	height: 100px;
+	*height: 42px;
+	resize: none;
+	display: inline-block;
+	resize: none;
+	outline: none;
+	overflow-y: visible;
+	overflow-x: hidden;
+	white-space: pre-line;
+	word-break: break-all;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	columns: 100;
+	border: none;
+}
+
+div.reply-box textarea:focus::-webkit-input-placeholder, div.reply-box-expand textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+div.reply-action {
+	text-align: left;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+div.reply-action a.btn {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+ul.comments-list {
+	margin-left: 0;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding-left:0;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+ul.comments-list li {
+	list-style: none;
+}
+
+li.comment-item {
+	margin-left: 8px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-right: 30px;
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+}
+
+.cmt-content {
+	margin-top: 10px;
+	display: inline-block;
+	margin-right: 50px;
+}
+
+.cmt-content .comment-header, .cmt-content .comment-body {
+	margin-bottom: 8px;
+}
+
+.cmt-content .comment-header .cmt-user-name {
+	font-size: 14px;
+	font-weight: 800;
+	margin-right: 8px;
+}
+.cmt-content .comment-header .cmt-reply-date {
+	font-size: 10px;
+}
+
+.cmt-content .comment-body {
+	font-size: 12px;
+	padding-left: 0px;
+}
+
+.comment-footer {
+	font-size: 12px;
+}
+
+.comment-footer .cmt-reply-action {
+	cursor: pointer;
+	margin-right: 10px;
+}
+.comment-footer .cmt-reply-action i {
+	margin-right: 6px;
+}
+
+.reply-action label,
+.reply-action input {
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.reply-action input,
+.reply-action input:after,
+.reply-action input:before,
+.reply-action input:active {
+	border-radius: 0;
+	height: 30px;
+	background-color: transparent !important;
+	
+}

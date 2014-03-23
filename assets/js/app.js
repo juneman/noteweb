@@ -92,7 +92,8 @@ $(function() {
 ////////////////////////////////////////
 $(function() {
 	var delFixedNav = function(){
-		var bottomWrapperTop = $('.bottom-wrapper').offset().top;
+		var bottomWrapperTop = $('.bottom-wrapper').offset().top - 200;
+		//var bottomWrapperTop = $('.comments-wrapper').offset().top;
 		var scrollTop = $(window).scrollTop() ;
 		var viewscrollTop =  scrollTop + $(window).height();
 		var navTop = $('#aside-wrapper1').css('top');
