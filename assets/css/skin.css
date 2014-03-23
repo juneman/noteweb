@@ -8,8 +8,8 @@
  */
 
 body.default  ::selection {
-background: #FF6666;
-color: #fff;
+	background: #FF6666;
+	color: #fff;
 }
 
 body.default {
@@ -36,15 +36,13 @@ body.default {
 	color: #333333;
 }
 
-body.default a,
-.default .aside-navbar ul.aside-nav li.active span, 
-.default .aside-navbar ul.aside-nav li:hover span,
-.default .aside-navbar .aside-nav-search.inactive:hover,
-.default .comment-footer .cmt-reply-action:hover,
-.default .comment-footer .cmt-reply-action:hover i  {
+body.default a, .default .aside-navbar ul.aside-nav li.active span, .default .aside-navbar ul.aside-nav li:hover span, .default .aside-navbar .aside-nav-search.inactive:hover, .default .comment-footer .cmt-reply-action:hover, .default .comment-footer .cmt-reply-action:hover i, .default .post .head .extra span a:hover {
 	color: #FF6666;
 }
 
+.default .yy-conver {
+	background-color: #FF6666;
+}
 .default .aside-navbar ul.aside-nav li.active, .default .aside-navbar ul.aside-nav li:hover {
 	background-color: #f4f4f4;
 }
@@ -57,10 +55,15 @@ body.default a,
 .default .post .head:first-child {
 	border-left: 6px solid #FF6666;
 }
+.default .post.preview .head:first-child {
+	border-left: none;
+}
 
-.default .cmt-content .comment-header .cmt-reply-date ,
-.default .comment-footer ,
-.default  .post .head .extra span {
+.default .post.preview {
+	border-bottom: 1px solid #DDD;
+}
+
+.default .cmt-content .comment-header .cmt-reply-date, .default .comment-footer, .default  .post .head .extra span, .default .post .head .extra span a, .post-tags-bottom .v-line1, .extra .v-line1 {
 	color: #999;
 }
 
@@ -68,8 +71,7 @@ body.default a,
 	border-top: 1px solid #DDD;
 }
 
-.default .aside-navbar .aside-nav-search.active,
-.default div.reply-box textarea:hover {
+.default .aside-navbar .aside-nav-search.active, .default div.reply-box textarea:hover {
 	border: 1px solid #FF6666;
 }
 
@@ -94,6 +96,24 @@ body.default a,
 .default .reply-action input {
 }
 
+.default .yy-pagination .pagination li.enable a:hover {
+	color: #FF6699;
+}
+
+.default .bottom-wrapper .bottom .wrapper {
+	background-color: #FFFFFF;
+}
+
+.default .btn-back-toTop a i {
+	color: #CCCCCC;
+	background-color: #777;
+}
+
+.default .btn-back-toTop:hover a i {
+	color: #FFFFFF;
+	background-color: #FF6666;
+}
+ 
 
 /**
  * 	sytle-1

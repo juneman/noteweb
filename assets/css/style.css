@@ -50,41 +50,50 @@ ul {
 	position: fixed;
 	bottom: 80px;
 	right: 50px;
-	width: 58px;
-	height: 58px;
-	cursor: pointer;
-	background-image: url(../img/top4y.png);
-	background-position: 0 0;
 }
 
-.btn-back-toTop:hover {
-	background-image: url(../img/top4y.png);
-	background-position: 0 -58px;
+.btn-back-toTop a i {
+	font-size: 28px;
+	font-weight: 100;
+	cursor: pointer;
+	padding:10px;
 }
+
 
 /**
  *
  */
 
 .bottom-wrapper {
-	margin: 0 auto;
-	width: 100%;
-	height: 300px;
-	background-color: red;
 }
 
 .bottom {
+	margin: 0 auto;
+	width: 75%;
 	position:relative;
-	width: 50%;
-	font-size: 12px;
-	line-height: 1.5em;
-	margin-top: 50px;
-	margin-bottom: 30px;
 }
 
-.bottom .bottom-text {
+.bottom .wrapper {
+	position:relative;
+	font-size: 12px;
+	line-height: 1.5em;
+	margin-top: 20px;
+	margin-left:260px;
+	position: left;
+	
+	padding-left: 0;
+	padding-top: 20px;
+	padding-right:30px;
+	padding-bottom:20px;
+}
+
+.bottom .wrapper .bottom-text {
 	overflow: hidden;
 	margin-left: 5px;
+}
+.bottom .wrapper .bottom-text a {
+	padding-left:5px;
+	padding-right: 5px;
 }
 
 /***
@@ -129,10 +138,10 @@ ul {
 
 .aside-navbar ul.aside-nav li {
 	cursor: pointer;
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 19px;
 	text-indent: 5px;
 }
@@ -200,46 +209,71 @@ ul {
 
 
 .post {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	padding-right: 20px;
 }
 
 .post .head {
-	padding-left: 15px;
+	padding-left: 25px;
 	padding-top: 6px;
 }
 
 .post .content {
-	padding-left: 22px;
-	margin-left: 2px;
+	margin-left: 32px;
+	margin-right:12px;
 	padding-top: 10px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+.post.preview:first-child {
+	padding-top:15px;
+}
+
+.post.preview {
+	margin-bottom: 5px;
+	margin-left: 16px;
+	margin-right: 8px;
+}
+.post.preview .head {
+	padding-top: 2px;
+	padding-left: 10px;
+}
+.post.preview .content{
+	margin-left: 15px;
+	padding-bottom:0px;
+}
+
+.content-body .post.preview:last-child {
+	margin-bottom: 15px;
 }
 
 .post .content p {
 	line-height: 23px;
 }
 
-.post .head .title {
+.post .head .title ,
+.post .head .title span,
+.post.preview .head .title a{
 	padding-top: 6px;
 	padding-bottom: 6px;
 	text-align: left;
-	font-size: 20px;
-	line-height: 23px;
-	font-weight: 600;
+	font-size: 19px;
+	line-height: 26px;
+	font-weight: 100;
 }
 
 .post .head .extra {
+	padding-left:3px;
 	padding-bottom: 3px;
 	margin: 0;
 }
 
-.post .head .extra span {
+.post .head .extra span,
+.post .head .extra span a{
 	margin-bottom: 0px;
 	padding-bottom: 4px;
 	font-size: 12px;
 	font-weight:100;
-	color: #999;
 }
 
 .post-tags-bottom .v-line, .extra .v-line {
@@ -248,19 +282,18 @@ ul {
 
 .post-tags-bottom .v-line1, .extra .v-line1 {
 	margin: 0 2px 0 5px;
-	color: #999;
 }
 
 .post-tags-bottom i, .extra i {
 	padding-right: 8px;
 }
 
-.post-tags-bottom label em a {
+.post-tags-bottom span em a {
 	font-size: 12px;
 	padding-right: 3px;
 }
 
-.comments-wrapper, .post-tags-bottom, .yy-pagenation {
+.comments-wrapper, .post-tags-bottom, .yy-pagination {
 	padding-left: 20px;
 	padding-top: 10px;
 	padding-right: 15px;
@@ -268,17 +301,17 @@ ul {
 	margin-bottom: 15px;
 }
 
-.yy-pagenation p a {
-	padding-left: 10px;
-}
-
-.yy-pagenation p:last-child a {
-	padding-left: 0px;
-}
-
-.yy-pagenation p {
+.yy-pagination {
 	margin-bottom: 4px;
+	padding-top: 0px;
+	padding-left: 30px;
 }
+
+.yy-pagination .pagination > li > a, 
+.yy-pagination .pagination > li > span{
+	border-radius: 0;
+}
+
 /*
  * 
  * 
@@ -452,5 +485,22 @@ li.comment-item {
 	border-radius: 0;
 	height: 30px;
 	background-color: transparent !important;
-	
 }
+
+.aside-navbar {
+	z-index: 0;
+	background:transparent;
+}
+.aside-navbar .aside-nav.L1 li span,
+.aside-navbar .aside-nav.L2 li span{
+	background:transparent;
+}
+
+.yy-conver {
+	width: 236px;
+	height: 35px;
+	z-index: -1;
+	position: absolute;
+	margin-left: -3px;
+}
+

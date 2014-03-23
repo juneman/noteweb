@@ -24,7 +24,7 @@ function rtrim(str) {
  */
 $(function() {
 	// GO TO TOP SETTING
-	var offset = 220;
+	var offset = 180;
 	var duration = 500;
 	jQuery(window).scroll(function() {
 		if (jQuery(this).scrollTop() > offset) {
@@ -92,6 +92,7 @@ $(function() {
 ////////////////////////////////////////
 $(function() {
 	var delFixedNav = function(){
+		return;
 		var bottomWrapperTop = $('.bottom-wrapper').offset().top - 200;
 		//var bottomWrapperTop = $('.comments-wrapper').offset().top;
 		var scrollTop = $(window).scrollTop() ;
@@ -114,9 +115,20 @@ $(function() {
 	$(window).scroll(function() {
 		delFixedNav();
 	});
+	
 });
 
 //////////////////////////////////
+$(function() {
+	$(".nav-item").hover(function(){
+  		var topPos = $(this).offset().top;
+  		$('.yy-conver').css('top', topPos+ 'px');
+	});
+});
+ 
+
+/////////////////////////////////////////
+
 
 $(function() {
 	$(".post-action-cat-select li a").click(function(){
