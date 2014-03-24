@@ -120,10 +120,44 @@ $(function() {
 
 //////////////////////////////////
 $(function() {
+	var speed = 10.0;
+	var setConverPosition = function(obj, cb) {
+		var scrollTop = $(window).scrollTop();
+  		var topPos = obj.offset().top;
+  		var offset = topPos - scrollTop;
+  		var duration = offset / speed;
+  		$('.yy-conver').animate({top: offset}, duration, cb);
+  		
+  		/*.css('top', (topPos - scrollTop )+ 'px');
+  		 * 
+  		 */
+	};
+	
+	var moveConver = function(obj) {
+		var cb = function(){
+			 $('.nav-item.active').addClass('focuseOut');
+			$('.nav-item.focuseOut').removeClass('active');
+		};
+		setConverPosition(obj, cb);
+	};
+	
+	var setConverToActivedItem = function() {
+		var cb = function() {
+			$('.nav-item.focuseOut').addClass('active');
+			$('.nav-item.active').removeClass('focuseOut');
+		};
+		setConverPosition($('.nav-item.focuseOut'), cb);
+	};
+	
 	$(".nav-item").hover(function(){
-  		var topPos = $(this).offset().top;
-  		$('.yy-conver').css('top', topPos+ 'px');
+		moveConver($(this));
 	});
+	
+	$('.aside-nav.L1').mouseleave(function(){
+		setConverToActivedItem();
+	});
+	
+	setConverToActivedItem();
 });
  
 

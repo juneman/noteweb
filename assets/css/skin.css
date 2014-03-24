@@ -32,20 +32,33 @@ body.default {
 	background-color: #FFFFFF;
 }
 
-.default .aside-navbar ul.aside-nav li span {
+.default .aside-navbar .aside-nav .nav-item span {
 	color: #333333;
 }
 
-body.default a, .default .aside-navbar ul.aside-nav li.active span, .default .aside-navbar ul.aside-nav li:hover span, .default .aside-navbar .aside-nav-search.inactive:hover, .default .comment-footer .cmt-reply-action:hover, .default .comment-footer .cmt-reply-action:hover i, .default .post .head .extra span a:hover {
+body.default a, 
+.default .aside-navbar .aside-nav .nav-item.active span, 
+.default .aside-navbar .aside-nav .nav-item:hover span, 
+.default .aside-navbar .aside-nav-search.inactive:hover, 
+.default .comment-footer .cmt-reply-action:hover, 
+.default .comment-footer .cmt-reply-action:hover i, 
+.default .post .head .extra span a:hover {
 	color: #FF6666;
 }
 
 .default .yy-conver {
 	background-color: #FF6666;
 }
-.default .aside-navbar ul.aside-nav li.active, .default .aside-navbar ul.aside-nav li:hover {
+
+.default .aside-navbar .aside-nav .nav-item.active, 
+.default .aside-navbar .aside-nav .nav-item:hover {
 	background-color: #f4f4f4;
 }
+
+.default .aside-navar .aside-nav .nav-item.focuseOut {
+	background-color: #FFFFFF;
+}
+
 
 .default .aside-navbar .aside-nav-search.active {
 	background-color: #FF6666 !important;

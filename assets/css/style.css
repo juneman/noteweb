@@ -493,6 +493,10 @@ li.comment-item {
 	background-color: transparent !important;
 }
 
+.aside-wrapper {
+	z-index: 0;
+}
+
 .aside-navbar {
 	z-index: 0;
 	background:transparent;
@@ -506,7 +510,7 @@ li.comment-item {
 	width: 236px;
 	height: 35px;
 	z-index: -1;
-	position: absolute;
+	position: fixed;
 	margin-left: -3px;
 }
 
