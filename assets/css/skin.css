@@ -38,6 +38,7 @@ body.default {
 
 body.default a, 
 .default .aside-navbar .aside-nav .nav-item.active span, 
+.default .aside-navbar .aside-nav .nav-item.focuseOut span,
 .default .aside-navbar .aside-nav .nav-item:hover span, 
 .default .aside-navbar .aside-nav-search.inactive:hover, 
 .default .comment-footer .cmt-reply-action:hover, 
@@ -47,6 +48,11 @@ body.default a,
 }
 
 .default .yy-conver {
+	background-color: #EEEEEE;
+}
+
+.default .yy-conver .c1,
+.default .yy-conver .c2{
 	background-color: #FF6666;
 }
 
@@ -115,6 +121,16 @@ body.default a,
 
 .default .bottom-wrapper .bottom .wrapper {
 	background-color: #FFFFFF;
+}
+
+.default .bottom .bottom-cols .bottom-col .col-title {
+	color: #000;
+}
+.default .bottom .bottom-cols .bottom-col li a {
+	color: #666;
+}
+.default .bottom .bottom-cols .bottom-col li a:hover {
+	color: #FF6666;
 }
 
 .default .btn-back-toTop a i {

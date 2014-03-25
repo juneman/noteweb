@@ -89,11 +89,29 @@ ul {
 
 .bottom .wrapper .bottom-text {
 	overflow: hidden;
-	margin-left: 5px;
+	margin-top: 20px;
+	margin-left: 45px;
 }
 .bottom .wrapper .bottom-text a {
 	padding-left:5px;
 	padding-right: 5px;
+}
+.bottom .bottom-cols {
+	margin-bottom:10px;
+}
+.bottom .bottom-cols .bottom-col {
+	padding-left: 0;
+}
+
+.bottom .bottom-cols .bottom-col .col-title {
+	font-size: 14px;
+	text-indent: 5px;
+	line-height: 20px;
+}
+
+.bottom .bottom-cols .bottom-col li {
+	margin-left: 20px;
+	margin-top: 3px;
 }
 
 /***
@@ -513,4 +531,19 @@ li.comment-item {
 	position: fixed;
 	margin-left: -3px;
 }
+
+.yy-conver .c1,
+.yy-conver .c2{
+	width: 3px;
+	height: 35px;
+	opacity: 1;
+}
+.yy-conver .c1 {
+	float: left;
+}
+.yy-conver .c2{
+	float: right;
+}
+
+
 
