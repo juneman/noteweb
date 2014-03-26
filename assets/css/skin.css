@@ -122,6 +122,8 @@ body.default a,
 .default .bottom-wrapper .bottom .wrapper {
 	background-color: #FFFFFF;
 }
+.default .bottom-wrapper .bottom .wrapper .bottom-text {
+}
 
 .default .bottom .bottom-cols .bottom-col .col-title {
 	color: #000;

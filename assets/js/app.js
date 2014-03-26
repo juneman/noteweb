@@ -90,9 +90,9 @@ $(function() {
 });
  
 ////////////////////////////////////////
+/*
 $(function() {
 	var delFixedNav = function(){
-		return;
 		var bottomWrapperTop = $('.bottom-wrapper').offset().top - 200;
 		//var bottomWrapperTop = $('.comments-wrapper').offset().top;
 		var scrollTop = $(window).scrollTop() ;
@@ -117,6 +117,7 @@ $(function() {
 	});
 	
 });
+*/
 
 //////////////////////////////////
 $(function() {

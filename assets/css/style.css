@@ -77,8 +77,9 @@ ul {
 	position:relative;
 	font-size: 12px;
 	line-height: 1.5em;
-	margin-top: 20px;
+	margin-top:30px;
 	margin-left:260px;
+	margin-bottom:50px;
 	position: left;
 	
 	padding-left: 0;
@@ -90,15 +91,17 @@ ul {
 .bottom .wrapper .bottom-text {
 	overflow: hidden;
 	margin-top: 20px;
-	margin-left: 45px;
+	margin-left: 30px;
 }
 .bottom .wrapper .bottom-text a {
 	padding-left:5px;
 	padding-right: 5px;
 }
 .bottom .bottom-cols {
-	margin-bottom:10px;
+	margin-top:10px;
+	margin-bottom:20px;
 }
+
 .bottom .bottom-cols .bottom-col {
 	padding-left: 0;
 }
@@ -141,7 +144,7 @@ ul {
 .content-body-wrapper {
 	position: relative;
 	margin-left: 260px;
-	position: left;
+	position: right;
 	min-height: 800px;
 }
 
@@ -513,21 +516,11 @@ li.comment-item {
 
 .aside-wrapper {
 	z-index: 0;
-}
-
-.aside-navbar {
 	z-index: 0;
-	background:transparent;
 }
-.aside-navbar .aside-nav.L1 li span,
-.aside-navbar .aside-nav.L2 li span{
-	background:transparent;
-}
-
 .yy-conver {
 	width: 236px;
 	height: 35px;
-	z-index: -1;
 	position: fixed;
 	margin-left: -3px;
 }
@@ -536,7 +529,6 @@ li.comment-item {
 .yy-conver .c2{
 	width: 3px;
 	height: 35px;
-	opacity: 1;
 }
 .yy-conver .c1 {
 	float: left;
@@ -545,5 +537,20 @@ li.comment-item {
 	float: right;
 }
 
+/*
+ * 
+ */
+.aside-wrapper,
+.aside-nav,
+.aside-navbar {
+	z-index: 1;
+}
+.yy-conver {
+	z-index:-1;
+}
 
+.content-body,
+.bottom {
+	z-index: 0;
+}
 
