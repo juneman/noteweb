@@ -110,13 +110,14 @@ ul {
 	font-size: 14px;
 	text-indent: 5px;
 	line-height: 20px;
+	padding-bottom:5px;
 }
 
 .bottom .bottom-cols .bottom-col li {
 	margin-left: 20px;
 	margin-top: 3px;
 }
-
+ 
 /***
  *
  *
