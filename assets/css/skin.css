@@ -32,14 +32,15 @@ body.default {
 	background-color: #FFFFFF;
 }
 
-.default .aside-navbar .aside-nav .nav-item span {
+.default .aside-navbar .aside-nav .nav-item,
+.aside-navbar ul.aside-nav .nav-item a {
 	color: #333333;
 }
 
 body.default a, 
-.default .aside-navbar .aside-nav .nav-item.active span, 
-.default .aside-navbar .aside-nav .nav-item.focuseOut span,
-.default .aside-navbar .aside-nav .nav-item:hover span, 
+.default .aside-navbar .aside-nav .nav-item.active  a, 
+.default .aside-navbar .aside-nav .nav-item.focuseOut  a,
+.default .aside-navbar .aside-nav .nav-item:hover  a, 
 .default .aside-navbar .aside-nav-search.inactive:hover, 
 .default .comment-footer .cmt-reply-action:hover, 
 .default .comment-footer .cmt-reply-action:hover i, 

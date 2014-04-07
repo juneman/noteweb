@@ -56,9 +56,8 @@ ul {
 	font-size: 28px;
 	font-weight: 100;
 	cursor: pointer;
-	padding:10px;
+	padding: 10px;
 }
-
 
 /**
  *
@@ -70,22 +69,21 @@ ul {
 .bottom {
 	margin: 0 auto;
 	width: 75%;
-	position:relative;
+	position: relative;
 }
 
 .bottom .wrapper {
-	position:relative;
+	position: relative;
 	font-size: 12px;
 	line-height: 1.5em;
-	margin-top:30px;
-	margin-left:260px;
-	margin-bottom:50px;
+	margin-top: 30px;
+	margin-left: 260px;
+	margin-bottom: 50px;
 	position: left;
-	
 	padding-left: 0;
 	padding-top: 20px;
-	padding-right:30px;
-	padding-bottom:20px;
+	padding-right: 30px;
+	padding-bottom: 20px;
 }
 
 .bottom .wrapper .bottom-text {
@@ -94,12 +92,12 @@ ul {
 	margin-left: 30px;
 }
 .bottom .wrapper .bottom-text a {
-	padding-left:5px;
+	padding-left: 5px;
 	padding-right: 5px;
 }
 .bottom .bottom-cols {
-	margin-top:10px;
-	margin-bottom:20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 .bottom .bottom-cols .bottom-col {
@@ -110,14 +108,14 @@ ul {
 	font-size: 14px;
 	text-indent: 5px;
 	line-height: 20px;
-	padding-bottom:5px;
+	padding-bottom: 5px;
 }
 
 .bottom .bottom-cols .bottom-col li {
 	margin-left: 20px;
 	margin-top: 3px;
 }
- 
+
 /***
  *
  *
@@ -157,19 +155,26 @@ ul {
 	padding-top: 20px;
 	padding-bottom: 30px;
 }
+.aside-navbar .aside-nav .nav-item {
+	font-size: 13px;
+	cursor: pointer;
+}
 
-.aside-navbar ul.aside-nav li {
+.aside-navbar .aside-nav .nav-item a {
 	cursor: pointer;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	padding-left: 30px;
+	padding-right: 135px;
+	
 	text-transform: uppercase;
 	font-size: 13px;
 	line-height: 19px;
 	text-indent: 5px;
-}
-
-.aside-navbar ul.aside-nav li span {
-	padding-left: 30px;
+	text-decoration: none;
+	
+	display: inline-block;
+	
 }
 
 .aside-navbar ul {
@@ -180,8 +185,9 @@ ul {
 	margin-bottom: 0;
 }
 
-.aside-navbar ul.L2 li span {
-	padding-left: 75px;
+.aside-navbar ul.L2 .nav-item a {
+ 	padding-left: 75px;
+ 	padding-right: 90px;
 }
 
 .aside-navbar .aside-nav-search-wrapper {
@@ -217,18 +223,13 @@ ul {
 	display: inline-block;
 }
 
-
-
 /**
  *
  */
-.content-body,
-.content-body .row-fluid,
-.content-body .row-fluid .col-md-12 {
+.content-body, .content-body .row-fluid, .content-body .row-fluid .col-md-12 {
 	padding-left: 0px;
 	padding-right: 0px;
 }
-
 
 .post {
 	margin-bottom: 10px;
@@ -242,13 +243,13 @@ ul {
 
 .post .content {
 	margin-left: 32px;
-	margin-right:12px;
+	margin-right: 12px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
 .post.preview:first-child {
-	padding-top:15px;
+	padding-top: 15px;
 }
 
 .post.preview {
@@ -260,9 +261,9 @@ ul {
 	padding-top: 2px;
 	padding-left: 10px;
 }
-.post.preview .content{
+.post.preview .content {
 	margin-left: 15px;
-	padding-bottom:0px;
+	padding-bottom: 0px;
 }
 
 .content-body .post.preview:last-child {
@@ -273,9 +274,7 @@ ul {
 	line-height: 23px;
 }
 
-.post .head .title ,
-.post .head .title span,
-.post.preview .head .title a{
+.post .head .title, .post .head .title span, .post.preview .head .title a {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	text-align: left;
@@ -285,17 +284,16 @@ ul {
 }
 
 .post .head .extra {
-	padding-left:3px;
+	padding-left: 3px;
 	padding-bottom: 3px;
 	margin: 0;
 }
 
-.post .head .extra span,
-.post .head .extra span a{
+.post .head .extra span, .post .head .extra span a {
 	margin-bottom: 0px;
 	padding-bottom: 4px;
 	font-size: 12px;
-	font-weight:100;
+	font-weight: 100;
 }
 
 .post-tags-bottom .v-line, .extra .v-line {
@@ -323,7 +321,7 @@ ul {
 }
 
 .comments-wrapper {
-		padding-left: 28px;
+	padding-left: 28px;
 }
 
 .post-tags-bottom, .yy-pagination {
@@ -335,15 +333,14 @@ ul {
 	padding-top: 0px;
 }
 
-.yy-pagination .pagination > li > a, 
-.yy-pagination .pagination > li > span{
+.yy-pagination .pagination > li > a, .yy-pagination .pagination > li > span {
 	border-radius: 0;
 }
 
 /*
- * 
- * 
- * 
+ *
+ *
+ *
  */
 /**
  *
@@ -445,7 +442,7 @@ ul.comments-list {
 	margin-left: 0;
 	margin-top: 20px;
 	margin-bottom: 30px;
-	padding-left:0;
+	padding-left: 0;
 	padding-bottom: 20px;
 	padding-top: 10px;
 }
@@ -500,16 +497,12 @@ li.comment-item {
 	margin-right: 6px;
 }
 
-.reply-action label,
-.reply-action input {
+.reply-action label, .reply-action input {
 	font-size: 12px;
 	font-weight: 100;
 }
 
-.reply-action input,
-.reply-action input:after,
-.reply-action input:before,
-.reply-action input:active {
+.reply-action input, .reply-action input:after, .reply-action input:before, .reply-action input:active {
 	border-radius: 0;
 	height: 30px;
 	background-color: transparent !important;
@@ -526,32 +519,28 @@ li.comment-item {
 	margin-left: -3px;
 }
 
-.yy-conver .c1,
-.yy-conver .c2{
+.yy-conver .c1, .yy-conver .c2 {
 	width: 3px;
 	height: 35px;
 }
 .yy-conver .c1 {
 	float: left;
 }
-.yy-conver .c2{
+.yy-conver .c2 {
 	float: right;
 }
 
 /*
- * 
+ *
  */
-.aside-wrapper,
-.aside-nav,
-.aside-navbar {
+.aside-wrapper, .aside-nav, .aside-navbar {
 	z-index: 1;
 }
 .yy-conver {
-	z-index:-1;
+	z-index: -1;
 }
 
-.content-body,
-.bottom {
+.content-body, .bottom {
 	z-index: 0;
 }
 
