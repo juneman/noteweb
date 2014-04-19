@@ -129,9 +129,9 @@ $(function() {
   		var duration = offset / speed;
   		
   		if (animate) {
-  			$('body.default .yy-conver').animate({top: offset}, 12, cb);
+  			$('.yy-conver').animate({top: offset}, 12, cb);
   		}else {
-  			$('body.default .yy-conver').css('top', offset + 'px');
+  			$('.yy-conver').css('top', offset + 'px');
   			cb();
   		}
   		
@@ -142,27 +142,27 @@ $(function() {
 	
 	var moveConver = function(obj) {
 		var cb = function(){
-			 $('body.default .nav-item.active').addClass('focuseOut');
-			$('body.default .nav-item.focuseOut').removeClass('active');
+			 $('.nav-item.active').addClass('focuseOut');
+			$('.nav-item.focuseOut').removeClass('active');
 		};
 		setConverPosition(obj, cb, true);
 	};
 	
 	var setConverToActivedItem = function(animate) {
 		var cb = function() {
-			$('body.default .nav-item.focuseOut').addClass('active');
-			$('body.default .nav-item.active').removeClass('focuseOut');
+			$('.nav-item.focuseOut').addClass('active');
+			$('.nav-item.active').removeClass('focuseOut');
 		};
 		setConverPosition($('.nav-item.focuseOut'), cb, animate);
 	};
 	
-	$("body.default .nav-item").hover(function(){
+	$(".nav-item").hover(function(){
 		//$('.yy-conver .c1').animate({opacity: 0.5}, 50);
   		//$('.yy-conver .c2').animate({opacity: 0.5}, 50);
   		moveConver($(this));
 	});
 	
-	$('body.default .aside-nav.L1').mouseleave(function(){
+	$('.aside-nav.L1').mouseleave(function(){
 		setConverToActivedItem(true);
 	});
 	

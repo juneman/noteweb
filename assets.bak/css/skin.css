@@ -1,0 +1,166 @@
+/**
+ * 	author: www.yynote.com
+ *  2014.3.21
+ */
+
+/**
+ * 	default skin
+ */
+
+body.default  ::selection {
+	background: #FF6666;
+	color: #fff;
+}
+
+body.default {
+	background: #EEEEEE;
+}
+
+.default .divider {
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.default .yy-logo {
+	background-color: #FF6666;
+}
+.default .aside-navbar {
+	background-color: #FFFFFF;
+}
+
+.default .content-body {
+	background-color: #FFFFFF;
+}
+
+.default .aside-navbar .aside-nav .nav-item,
+.aside-navbar ul.aside-nav .nav-item a {
+	color: #333333;
+}
+
+body.default a, 
+.default .aside-navbar .aside-nav .nav-item.active  a, 
+.default .aside-navbar .aside-nav .nav-item.focuseOut  a,
+.default .aside-navbar .aside-nav .nav-item:hover  a, 
+.default .aside-navbar .aside-nav-search.inactive:hover, 
+.default .comment-footer .cmt-reply-action:hover, 
+.default .comment-footer .cmt-reply-action:hover i, 
+.default .post .head .extra span a:hover {
+	color: #FF6666;
+}
+
+.default .yy-conver {
+	background-color: #EEEEEE;
+}
+
+.default .yy-conver .c1,
+.default .yy-conver .c2{
+	background-color: #FF6666;
+}
+
+.default .aside-navbar .aside-nav .nav-item.active, 
+.default .aside-navbar .aside-nav .nav-item:hover {
+	background-color: #f4f4f4;
+}
+
+.default .aside-navar .aside-nav .nav-item.focuseOut {
+	background-color: #FFFFFF;
+}
+
+
+.default .aside-navbar .aside-nav-search.active {
+	background-color: #FF6666 !important;
+	color: #ffffff;
+}
+
+.default .post .head:first-child {
+	border-left: 6px solid #FF6666;
+}
+.default .post.preview .head:first-child {
+	border-left: none;
+}
+
+.default .post.preview {
+	border-bottom: 1px solid #DDD;
+}
+
+.default .cmt-content .comment-header .cmt-reply-date, .default .comment-footer, .default  .post .head .extra span, .default .post .head .extra span a, .post-tags-bottom .v-line1, .extra .v-line1 {
+	color: #999;
+}
+
+.default ul.comments-list {
+	border-top: 1px solid #DDD;
+}
+
+.default .aside-navbar .aside-nav-search.active, .default div.reply-box textarea:hover {
+	border: 1px solid #FF6666;
+}
+
+.default div.reply-box-expand {
+	border: 1px solid #DDD;
+}
+
+.default div.reply-box textarea {
+	border-color: #FF6666;
+	background-color: white;
+}
+
+.default div.reply-box-expand textarea {
+	color: #333;
+	border-bottom: 1px solid #DDD;
+}
+
+.default li.comment-item {
+	border-bottom: 1px solid #DDD;
+}
+
+.default .reply-action input {
+}
+
+.default .yy-pagination .pagination li.enable a:hover {
+	color: #FF6699;
+}
+
+.default .bottom-wrapper .bottom .wrapper {
+	background-color: #FFFFFF;
+}
+.default .bottom-wrapper .bottom .wrapper .bottom-text {
+}
+
+.default .bottom .bottom-cols .bottom-col .col-title {
+	color: #000;
+}
+.default .bottom .bottom-cols .bottom-col li a {
+	color: #666;
+}
+.default .bottom .bottom-cols .bottom-col li a:hover {
+	color: #FF6666;
+}
+
+.default .btn-back-toTop a i {
+	color: #CCCCCC;
+	background-color: #777;
+}
+
+.default .btn-back-toTop:hover a i {
+	color: #FFFFFF;
+	background-color: #FF6666;
+}
+ 
+
+/**
+ * 	sytle-1
+ */
+body.style-1 {
+	background: black;
+}
+
+.style-1 .yy-logo {
+	background-color: red;
+}
+.style-1 .aside-navbar {
+	background-color: #005580;
+}
+
+.style-1 .content-body {
+	background-color: #005580;
+}

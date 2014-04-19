@@ -8,12 +8,28 @@
  */
 
 body.default  ::selection {
-	background: #FF6666;
+	background: #F16E50;
 	color: #fff;
 }
 
 body.default {
 	background: #EEEEEE;
+}
+
+body.default .yy-logo {
+	height: 100px;
+}
+body.default .body-padding {
+	height: 50px;
+}
+
+body.default .content-wrapper ,
+.default .bottom {
+	width: 80%;
+}
+
+body.default .aside-wrapper.fixed {
+	position: fixed;
 }
 
 .default .divider {
@@ -22,7 +38,7 @@ body.default {
 }
 
 .default .yy-logo {
-	background-color: #FF6666;
+	background-color: #F16E50;
 }
 .default .aside-navbar {
 	background-color: #FFFFFF;
@@ -32,20 +48,20 @@ body.default {
 	background-color: #FFFFFF;
 }
 
-.default .aside-navbar .aside-nav .nav-item,
-.aside-navbar ul.aside-nav .nav-item a {
+.default .aside-navbar .aside-nav .nav-item span,
+.default .aside-navbar .aside-nav .nav-item span a {
 	color: #333333;
 }
 
 body.default a, 
-.default .aside-navbar .aside-nav .nav-item.active  a, 
-.default .aside-navbar .aside-nav .nav-item.focuseOut  a,
-.default .aside-navbar .aside-nav .nav-item:hover  a, 
+.default .aside-navbar .aside-nav .nav-item.active span a, 
+.default .aside-navbar .aside-nav .nav-item.focuseOut span a,
+.default .aside-navbar .aside-nav .nav-item:hover span a, 
 .default .aside-navbar .aside-nav-search.inactive:hover, 
 .default .comment-footer .cmt-reply-action:hover, 
 .default .comment-footer .cmt-reply-action:hover i, 
 .default .post .head .extra span a:hover {
-	color: #FF6666;
+	color: #F16E50;
 }
 
 .default .yy-conver {
@@ -54,7 +70,7 @@ body.default a,
 
 .default .yy-conver .c1,
 .default .yy-conver .c2{
-	background-color: #FF6666;
+	background-color: #F16E50;
 }
 
 .default .aside-navbar .aside-nav .nav-item.active, 
@@ -68,12 +84,12 @@ body.default a,
 
 
 .default .aside-navbar .aside-nav-search.active {
-	background-color: #FF6666 !important;
+	background-color: #F16E50 !important;
 	color: #ffffff;
 }
 
 .default .post .head:first-child {
-	border-left: 6px solid #FF6666;
+	border-left: 6px solid #F16E50;
 }
 .default .post.preview .head:first-child {
 	border-left: none;
@@ -83,7 +99,12 @@ body.default a,
 	border-bottom: 1px solid #DDD;
 }
 
-.default .cmt-content .comment-header .cmt-reply-date, .default .comment-footer, .default  .post .head .extra span, .default .post .head .extra span a, .post-tags-bottom .v-line1, .extra .v-line1 {
+.default .cmt-content .comment-header .cmt-reply-date, 
+.default .comment-footer, 
+.default  .post .head .extra span, 
+.default .post .head .extra span a, 
+.default .post-tags-bottom .v-line1, 
+.default .extra .v-line1 {
 	color: #999;
 }
 
@@ -92,7 +113,7 @@ body.default a,
 }
 
 .default .aside-navbar .aside-nav-search.active, .default div.reply-box textarea:hover {
-	border: 1px solid #FF6666;
+	border: 1px solid #F16E50;
 }
 
 .default div.reply-box-expand {
@@ -100,7 +121,7 @@ body.default a,
 }
 
 .default div.reply-box textarea {
-	border-color: #FF6666;
+	border-color: #F16E50;
 	background-color: white;
 }
 
@@ -116,6 +137,12 @@ body.default a,
 .default .reply-action input {
 }
 
+.default .yy-pagination {
+	/*
+		 border-top: 1px solid #DDD;
+	
+	 */
+}
 .default .yy-pagination .pagination li.enable a:hover {
 	color: #FF6699;
 }
@@ -133,7 +160,7 @@ body.default a,
 	color: #666;
 }
 .default .bottom .bottom-cols .bottom-col li a:hover {
-	color: #FF6666;
+	color: #F16E50;
 }
 
 .default .btn-back-toTop a i {
@@ -143,24 +170,239 @@ body.default a,
 
 .default .btn-back-toTop:hover a i {
 	color: #FFFFFF;
-	background-color: #FF6666;
+	background-color: #F16E50;
 }
+ 
+ 
+.default .aside-wrapper {
+	width: 230px;
+	float: left;
+}
+
+.default .aside-wrapper.fixed {
+	position: fixed;
+	top: 0;
+}
+
+.default .content-body-wrapper ,
+.default .bottom .wrapper {
+	margin-left: 260px;
+} 
+ 
+.default .aside-navbar .aside-nav .nav-item a {
+	padding-left: 30px;
+	padding-right: 135px;
+}
+
+.default .aside-navbar ul.L2 .nav-item a {
+	padding-left: 75px;
+	padding-right: 90px;
+} 
+
+.default .aside-navbar .aside-nav .nav-item {
+	cursor: pointer;
+}
+
  
 
 /**
  * 	sytle-1
  */
-body.style-1 {
-	background: black;
+
+body.cleaner  ::selection {
 }
 
-.style-1 .yy-logo {
-	background-color: red;
+body.cleaner {
+	background: #FFFFFF;
 }
-.style-1 .aside-navbar {
-	background-color: #005580;
+body.cleaner .yy-logo {
+	height: 60px;
+}
+body.cleaner .body-padding {
+	height: 100px;
 }
 
-.style-1 .content-body {
-	background-color: #005580;
+body.cleaner .content-wrapper ,
+.cleaner .bottom {
+	width: 76%;
 }
+
+body.cleaner .aside-wrapper.fixed {
+	position: inherit;
+}
+
+.cleaner .divider {
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.cleaner .yy-logo {
+	
+}
+.cleaner .aside-navbar {
+	background-color: #FFFFFF;
+}
+
+.cleaner .content-body {
+	background-color: #FFFFFF;
+}
+
+.cleaner .aside-navbar .aside-nav .nav-item span,
+.cleaner .aside-navbar .aside-nav .nav-item span a {
+	color: #333333;
+}
+
+body.cleaner a, 
+.cleaner .aside-navbar .aside-nav .nav-item.active span a, 
+.cleaner .aside-navbar .aside-nav .nav-item.focuseOut span a,
+.cleaner .aside-navbar .aside-nav .nav-item span a:hover, 
+.cleaner .aside-navbar .aside-nav-search.inactive:hover, 
+.cleaner .comment-footer .cmt-reply-action:hover, 
+.cleaner .comment-footer .cmt-reply-action:hover i, 
+.cleaner .post .head .extra span a:hover {
+	color: #F16E50;
+}
+
+.cleaner .aside-navbar .aside-nav .nav-item span a:hover {
+	text-decoration: underline;
+}
+
+
+.cleaner .yy-conver {
+	display: none;
+}
+
+.cleaner .yy-conver .c1,
+.cleaner .yy-conver .c2{
+	display: none;
+}
+
+.cleaner .aside-navbar .aside-nav .nav-item.active, 
+.cleaner .aside-navbar .aside-nav .nav-item:hover {
+	
+}
+
+.cleaner .aside-navar .aside-nav .nav-item.focuseOut {
+	background-color: #FFFFFF;
+}
+
+.cleaner .aside-navbar .aside-nav-search.active {
+	background-color: #F16E50 !important;
+	color: #ffffff;
+}
+
+.cleaner .post .head:first-child {
+	 
+}
+.cleaner .post.preview .head:first-child {
+	 
+}
+
+.cleaner .post.preview {
+	border-bottom: 1px solid #DDD;
+}
+
+.cleaner .cmt-content .comment-header .cmt-reply-date, 
+.cleaner .comment-footer, 
+.cleaner  .post .head .extra span, 
+.cleaner .post .head .extra span a, 
+.cleaner .post-tags-bottom .v-line1, 
+.cleaner .extra .v-line1 {
+	color: #999;
+}
+
+.cleaner ul.comments-list {
+	border-top: 1px solid #DDD;
+}
+
+.cleaner .aside-navbar .aside-nav-search.active, 
+.cleaner div.reply-box textarea:hover {
+	border: 1px solid #F16E50;
+}
+
+.cleaner div.reply-box-expand {
+	border: 1px solid #DDD;
+}
+
+.cleaner div.reply-box textarea {
+	border-color: #F16E50;
+	background-color: white;
+}
+
+.cleaner div.reply-box-expand textarea {
+	color: #333;
+	border-bottom: 1px solid #DDD;
+}
+
+.cleaner li.comment-item {
+	border-bottom: 1px solid #DDD;
+}
+
+.cleaner .reply-action input {
+}
+
+.cleaner .yy-pagination {
+	/*
+		 border-top: 1px solid #DDD;
+	
+	 */
+}
+.cleaner .yy-pagination .pagination li.enable a:hover {
+	color: #FF6699;
+}
+
+.cleaner .bottom-wrapper .bottom .wrapper {
+	background-color: #FFFFFF;
+}
+.cleaner .bottom-wrapper .bottom .wrapper .bottom-text {
+}
+
+.cleaner .bottom .bottom-cols .bottom-col .col-title {
+	color: #000;
+}
+.cleaner .bottom .bottom-cols .bottom-col li a {
+	color: #666;
+}
+.cleaner .bottom .bottom-cols .bottom-col li a:hover {
+	color: #F16E50;
+}
+
+.cleaner .btn-back-toTop a i {
+	color: #CCCCCC;
+	background-color: #777;
+}
+
+.cleaner .btn-back-toTop:hover a i {
+	color: #FFFFFF;
+	background-color: #F16E50;
+}
+
+.cleaner .aside-navbar .aside-nav .nav-item a {
+}
+
+.cleaner .aside-navbar ul.L2 .nav-item a {
+	padding-left: 26px;
+} 
+ .cleaner .aside-wrapper {
+	width: 160px;
+}
+
+.cleaner .aside-wrapper.fixed {
+	position: relative;
+}
+
+.cleaner .content-body-wrapper, 
+.cleaner .bottom .wrapper {
+	margin-left: 170px;
+} 
+
+.cleaner .aside-navbar .aside-nav-search-wrapper {
+	display: none;
+}
+
+.cleaner .aside-navbar .aside-nav .nav-item {
+	cursor: auto;
+}
+
+
+ 

@@ -6,7 +6,6 @@
 body { background-color: White; font-family: helvetica, verdana, arial, serif; background: #F9F9F9; margin: auto; width: 1175px; }
 body #editor { width: 570px; float: left; margin-rigth: 10px; }
 body #editor #title { width: 548px; border: 1px solid #efefef; margin: 10px 0; font-size: 2em; padding: 0 10px; }
-body #editor #url { width: 548px; border: 1px solid #efefef; margin: 2px 0 9px 0; font-size: 22px; padding: 0 10px; }
 body #nav { margin: 20px 0 10px 26px; float: right; }
 body #nav button { -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px; -khtml-border-radius: 6px; border-radius: 6px; font-size: 18px; line-height: 1.2em; padding: 0.3em 1em; border-width: 1px; background-color: #bd0013; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f27380), color-stop(10%, #ea1f34), color-stop(50%, #9f0f1d), color-stop(50%, #910d1b), color-stop(100%, #c01223)); background-image: -moz-linear-gradient(top, #f27380 0%, #ea1f34 10%, #9f0f1d 50%, #910d1b 50%, #c01223 100%); background-image: linear-gradient(top, #f27380 0%, #ea1f34 10%, #9f0f1d 50%, #910d1b 50%, #c01223 100%); border-color: #670a13; text-shadow: #3e0006 0px 1px 1px; -moz-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -webkit-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -o-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -moz-background-clip: padding; -webkit-background-clip: padding; -o-background-clip: padding-box; -ms-background-clip: padding-box; -khtml-background-clip: padding-box; background-clip: padding-box; }
 body #nav button, body #nav button:visited { color: white; }
@@ -75,66 +74,3 @@ div.grippie { background: #eeeeee url(../images/grippie.png) no-repeat scroll ce
 
 #wmd-output { display: none; }
 #wmd-output pre { white-space: pre-wrap; /* css-3 */ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ word-wrap: break-word; /* Internet Explorer 5.5+ */ }
-
-
-/*
- *
- *
- */
-blockquote {
-	page-break-inside: avoid;
-}
-
-blockquote {
-	padding: 6px 20px 10px 20px;
-	margin: 0 0 20px 15px;
-	font-size: 17.5px;
-	border-left: 5px solid #aaa;
-}
-blockquote p:last-child,
-blockquote ul:last-child,
-blockquote ol:last-child {
-	margin-bottom: 0;
-}
-blockquote footer,
-blockquote small,
-blockquote .small {
-	display: block;
-	font-size: 80%;
-	line-height: 1.42857143;
-	color: #999;
-}
-blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
-	content: '\2014 \00A0';
-}
-.blockquote-reverse,
-	blockquote.pull-right {
-		padding-right: 15px;
-		padding-left: 0;
-		text-align: right;
-		border-right: 5px solid #eee;
-		border-left: 0;
-	}
-.blockquote-reverse footer:before,
-	blockquote.pull-right footer:before,
-	.blockquote-reverse small:before,
-	blockquote.pull-right small:before,
-	.blockquote-reverse .small:before,
-	blockquote.pull-right .small:before {
-content: '';
-	}
-.blockquote-reverse footer:after,
-	blockquote.pull-right footer:after,
-	.blockquote-reverse small:after,
-	blockquote.pull-right small:after,
-	.blockquote-reverse .small:after,
-	blockquote.pull-right .small:after {
-content: '\00A0 \2014';
-	}
-blockquote:before,
-	blockquote:after {
-content: "";
-	}
-
